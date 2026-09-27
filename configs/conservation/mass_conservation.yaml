@@ -1,0 +1,6 @@
+# Conservation head. The residual tolerance and the margin smoothing are engineering
+# defaults; the weight is the swept quantity of the Tier-3 ablation.
+# Ref: Sec. 3.6, Eq. (1); Table 2, constraint weight settings.
+residual_tolerance: 0.20
+penalty_weight: 1.0
+penalty_margin: 0.05

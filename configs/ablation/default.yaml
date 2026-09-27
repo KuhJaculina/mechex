@@ -1,0 +1,8 @@
+# Ablation switches. The defaults are the full model; the reported variants set one of
+# these from configs/study/.
+# Ref: Table 2, component removal and architectural substitution.
+molecular_branch: true
+imaging_branch: true
+decision_layer: true
+adaptation: frozen_head
+initialisation: pretrained

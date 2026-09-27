@@ -1,0 +1,4 @@
+# Tier 1: the structure branch removed.
+# Ref: Table 2, "No molecular branch".
+ablation:
+  molecular_branch: false

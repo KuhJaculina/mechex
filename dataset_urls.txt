@@ -1,0 +1,31 @@
+# Dataset and resource access
+#
+# Entries below were fetched during the release pass and their content matched the
+# resource they name. Nothing here is a dataset the release redistributes: the primary
+# clinical cohort is not distributed and the auxiliary resources are read at their source.
+#
+# Entry format:
+#   <resource> | <url> | <licence> | <access note>
+#
+# --- Primary cohort (NOT distributed) -------------------------------------------------
+# The three-site, two-region de-identified cohort of 8,333 records over 27 molecules is
+# held by the corresponding author. The manuscript's Data availability statement carries
+# unresolved repository URLs that were not resolvable at the time of this release, so no
+# link is recorded here. Everything the cohort supplies is replaced by a schema-compatible
+# fixture generated inside the release; see configs/cohort/fixture.yaml and the deviation
+# register in claim_to_code.json.
+#
+# --- Reference-standard material (NOT distributed) ------------------------------------
+# The 418 directly assayed records come from archived de-identified vascular and
+# skeletal-muscle material obtained during clinically indicated procedures. The material
+# is not redistributable and no public link exists.
+#
+# --- Supplementary tables referenced by the manuscript (NOT distributed) ---------------
+# Supplementary Tables SA-3, SA-4, SA-5, SB-5, SC-1, SC-2 and SD-2 are cited by the
+# manuscript but were not supplied with the released PDF, so they could not be read and no
+# link is recorded for them.
+#
+# --- Auxiliary public resources -------------------------------------------------------
+Drug Repurposing Hub | https://clue.io/repurposing | Broad Institute terms of use | open web query interface, no bulk download required; fetched and content confirmed
+ChEMBL | https://www.ebi.ac.uk/chembl/ | CC BY-SA 3.0 | open REST interface and bulk downloads; fetched and content confirmed
+PubChem | https://pubchem.ncbi.nlm.nih.gov/ | public domain (US NIH) | open query and PUG-REST interface; fetched and content confirmed

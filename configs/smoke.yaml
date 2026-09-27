@@ -1,0 +1,24 @@
+# Smoke overlay for the unit suite and the closed-loop checks only.
+# Ref: none; every value here is an engineering reduction that keeps a forward pass and a
+# two-step fit inside a unit test. Do not use for reporting.
+basis:
+  layers: 2
+  latent_dim: 32
+  heads: 2
+vascular:
+  latent_dim: 32
+  stem_channels: [8, 16, 24]
+  depth: 3
+  volume_shape: [16, 16, 12]
+coupling:
+  width: 32
+  heads: 2
+uncertainty:
+  hidden_dim: 16
+  isotonic_bins: 8
+optimiser:
+  lr: 0.005
+  epochs: 2
+  batch_size: 8
+  patience: 2
+  repeats: 2

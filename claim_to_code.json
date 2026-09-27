@@ -1,0 +1,1717 @@
+{
+  "artifact": "claim_to_code.json",
+  "release": "mechex-1.0.0",
+  "version": "1.0.0",
+  "model": "MechEx",
+  "root": "mechex",
+  "anchor_convention": "anchors are the manuscript's own section, equation and table numbers",
+  "verification_vocabulary": [
+    "PASS",
+    "FAIL",
+    "NOT_RUN",
+    "BLOCKED"
+  ],
+  "registry": {
+    "claim_count": 68,
+    "anchor_count": 65,
+    "code_reference_count": 108,
+    "kinds": {
+      "method": 42,
+      "design": 0,
+      "protocol": 0,
+      "reported_value": 26,
+      "tooling": 0
+    },
+    "deviation_count": 18
+  },
+  "anchors": [
+    "Abstract and Sec. 2.2-2.3",
+    "Sec. 2.1 and Sec. 3.5, reference standard",
+    "Sec. 2.1, reference adequacy",
+    "Sec. 2.1, study cohort",
+    "Sec. 2.2 and Sec. 3.5, criteria",
+    "Sec. 2.2, fold error",
+    "Sec. 2.3, definition of the physical-inconsistency rate",
+    "Sec. 2.4 and Table 3, stratification",
+    "Sec. 2.5 and Table 4, shifts",
+    "Sec. 2.6, reader study",
+    "Sec. 2.8, ranking",
+    "Sec. 2.9 and Sec. 3.12, deployment",
+    "Sec. 3.10, failure taxonomy",
+    "Sec. 3.10, operating point",
+    "Sec. 3.10, robustness",
+    "Sec. 3.10, silent-failure monitoring",
+    "Sec. 3.11, in vitro arm",
+    "Sec. 3.3, exclusion rules",
+    "Sec. 3.3, five transforms",
+    "Sec. 3.3, fourth transform",
+    "Sec. 3.3, linkage",
+    "Sec. 3.3, missingness",
+    "Sec. 3.3, third transform",
+    "Sec. 3.4, leakage control",
+    "Sec. 3.4, splitting",
+    "Sec. 3.5, threshold",
+    "Sec. 3.6 and Sec. 3.8",
+    "Sec. 3.6 and Sec. 4, design options",
+    "Sec. 3.6, 3D molecular basis transformer",
+    "Sec. 3.6, Eq. (1)",
+    "Sec. 3.6, Eq. (1) and the admissible range",
+    "Sec. 3.6, conservation head",
+    "Sec. 3.6, decision layer",
+    "Sec. 3.6, exposure-coupling module",
+    "Sec. 3.6, modified projection head",
+    "Sec. 3.6, molecular derivation",
+    "Sec. 3.6, six components",
+    "Sec. 3.6, uncertainty head",
+    "Sec. 3.6, vascular line",
+    "Sec. 3.6, volumetric CT base encoder",
+    "Sec. 3.8 and Sec. 3.9, resampling",
+    "Sec. 3.8, batch size",
+    "Sec. 3.8, composite objective",
+    "Sec. 3.8, early stopping",
+    "Sec. 3.8, input preparation",
+    "Sec. 3.8, optimisation",
+    "Sec. 3.8, quantisation",
+    "Sec. 3.8, repeats",
+    "Sec. 3.8, training",
+    "Sec. 3.9, agreement",
+    "Sec. 3.9, calibration",
+    "Sec. 3.9, concordance",
+    "Sec. 3.9, discrimination",
+    "Sec. 3.9, multiplicity",
+    "Sec. 3.9, net benefit",
+    "Sec. 3.9, per-site reporting",
+    "Sec. 4 and Sec. 3.11",
+    "Sec. 4, abstention",
+    "Sec. 4, design options",
+    "Sec. 4, third conclusion",
+    "Table 1, B9",
+    "Table 1, note",
+    "Table 2, Tier 1",
+    "Table 2, Tier 3",
+    "Table 2, interaction row"
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "statement": "The structure branch maps a molecule to a partition term through a 3D molecular foundation transformer with a frozen encoder and a modified projection head.",
+      "anchor": "Sec. 3.6, molecular derivation",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.basis.projection:MolecularBranch",
+        "mechex.basis.transformer:MolecularBasisEncoder"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c02",
+      "statement": "Atom attention is geometry-aware: interatomic distance and bond type bias the attention logits.",
+      "anchor": "Sec. 3.6, 3D molecular basis transformer",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.basis.transformer:MolecularAttention",
+        "mechex.basis.transformer:RadialDistanceBias",
+        "mechex.basis.transformer:BondTypeBias"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c03",
+      "statement": "The molecular encoder is frozen and the branch projects with the encoder's own featurisation.",
+      "anchor": "Sec. 3.6 and Sec. 3.8",
+      "location": "Sec. 3.8, p. 12",
+      "kind": "method",
+      "code": [
+        "mechex.basis.transformer:MolecularBasisEncoder",
+        "mechex.basis.graph:MoleculeGraph"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c04",
+      "statement": "The partition term is produced by the adapted projection head.",
+      "anchor": "Sec. 3.6, modified projection head",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.basis.projection:PartitionHead"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c05",
+      "statement": "Retention attribution reads physicochemical descriptors including efflux-substrate propensity, lipophilicity and molecular size.",
+      "anchor": "Sec. 4, third conclusion",
+      "location": "Sec. 4, pp. 14-19",
+      "kind": "reported_value",
+      "code": [
+        "mechex.basis.chemistry:descriptors",
+        "mechex.basis.projection:PartitionHead.attribution"
+      ],
+      "reported": {
+        "descriptor_count": 8.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c06",
+      "statement": "The delivery branch encodes the two-phase CTA into a delivery-capacity embedding with a frozen volumetric CT encoder and an adapted head.",
+      "anchor": "Sec. 3.6, vascular line",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.vascular.projection:VascularBranch",
+        "mechex.vascular.encoder:VolumetricCTEncoder"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c07",
+      "statement": "The volumetric encoder is a convolutional stem followed by token attention over the volume.",
+      "anchor": "Sec. 3.6, volumetric CT base encoder",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.vascular.encoder:ConvStem",
+        "mechex.vascular.encoder:TokenAttention"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c08",
+      "statement": "The delivered fraction is confined to the physically admissible open interval.",
+      "anchor": "Sec. 3.6, Eq. (1) and the admissible range",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.vascular.projection:DeliveredFractionHead"
+      ],
+      "reported": {
+        "minimum": 0.05,
+        "maximum": 0.95
+      },
+      "note": ""
+    },
+    {
+      "id": "c09",
+      "statement": "The perfused fraction is estimated from the arterial and delayed phases and converted into a dimensionless delivery term.",
+      "anchor": "Sec. 3.3, third transform",
+      "location": "Sec. 3.3, pp. 9-10",
+      "kind": "method",
+      "code": [
+        "mechex.vascular.perfusion:perfused_fraction",
+        "mechex.vascular.perfusion:delivery_term"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c10",
+      "statement": "Input volumes are resampled to isotropic 1.0 mm spacing, windowed to the arterial contrast range and intensity-normalised per scan.",
+      "anchor": "Sec. 3.8, input preparation",
+      "location": "Sec. 3.8, p. 12",
+      "kind": "method",
+      "code": [
+        "mechex.vascular.volume:resample_isotropic",
+        "mechex.vascular.volume:window_to_contrast_range",
+        "mechex.vascular.volume:normalise_per_scan"
+      ],
+      "reported": {
+        "isotropic_spacing_mm": 1.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c11",
+      "statement": "The exposure-coupling module applies bidirectional cross-attention between the two embeddings and emits the interaction term.",
+      "anchor": "Sec. 3.6, exposure-coupling module",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.coupling.bidirectional:BidirectionalCrossAttention"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c12",
+      "statement": "Concatenation, bilinear pooling, gated fusion and a single-branch stack are the architectural alternatives compared against cross-attention.",
+      "anchor": "Sec. 4, design options",
+      "location": "Sec. 4, pp. 14-19",
+      "kind": "method",
+      "code": [
+        "mechex.coupling.additive:build_coupling"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c13",
+      "statement": "Systemic availability is the product of the partition term, the delivered fraction and the interaction factor.",
+      "anchor": "Sec. 3.6, Eq. (1)",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.conservation.law:systemic_availability"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c14",
+      "statement": "The conservation residual is the relative difference between the concentration-derived availability and the model reconstruction.",
+      "anchor": "Sec. 3.6, Eq. (1)",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.conservation.residual:relative_residual"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c15",
+      "statement": "The conservation head applies a differential cost only once the residual passes a threshold.",
+      "anchor": "Sec. 3.6, conservation head",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.conservation.penalty:margin_penalty",
+        "mechex.conservation.residual:ConservationHead"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c16",
+      "statement": "A prediction is physically inconsistent when the residual exceeds tolerance, the implied delivered fraction leaves the admissible range, or exposure falls with perfused fraction.",
+      "anchor": "Sec. 2.3, definition of the physical-inconsistency rate",
+      "location": "Sec. 2.3, pp. 5-6",
+      "kind": "method",
+      "code": [
+        "mechex.conservation.inconsistency:inconsistency_flags",
+        "mechex.conservation.inconsistency:inconsistency_rate"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c17",
+      "statement": "The uncertainty head has an evidential output combined with a post-hoc isotonic recalibration to give a calibrated predictive standard deviation.",
+      "anchor": "Sec. 3.6, uncertainty head",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.uncertainty.evidential:EvidentialHead",
+        "mechex.uncertainty.isotonic:IsotonicRecalibrator",
+        "mechex.uncertainty.heads:UncertaintyHead"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c18",
+      "statement": "A deep ensemble is the reported alternative to the evidential head.",
+      "anchor": "Table 2, Tier 3",
+      "location": "Table 2, p. 6",
+      "kind": "method",
+      "code": [
+        "mechex.uncertainty.ensemble:DeepEnsembleHeads"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c19",
+      "statement": "The no-uncertainty-head variant fits a constant residual scale instead of a learned evidence model.",
+      "anchor": "Table 2, Tier 1",
+      "location": "Table 2, p. 6",
+      "kind": "method",
+      "code": [
+        "mechex.uncertainty.evidential:PointHead"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c20",
+      "statement": "The exposure index is the concentration-time integral normalised per molecule and scaled by the delivery term.",
+      "anchor": "Sec. 3.3, fourth transform",
+      "location": "Sec. 3.3, pp. 9-10",
+      "kind": "method",
+      "code": [
+        "mechex.decision.threshold:exposure_index",
+        "mechex.cohort.transforms:relative_exposure"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c21",
+      "statement": "The adequacy boundary is the minimum clinically important difference of 30% fixed on the development split.",
+      "anchor": "Sec. 3.5, threshold",
+      "location": "Sec. 3.5, p. 10",
+      "kind": "reported_value",
+      "code": [
+        "mechex.decision.threshold:adequacy_boundary",
+        "mechex.cohort.reference:freeze_threshold"
+      ],
+      "reported": {
+        "tau": 0.3
+      },
+      "note": ""
+    },
+    {
+      "id": "c22",
+      "statement": "The decision layer dichotomises against the fixed boundary and abstains when the predictive deviation exceeds the policy limit.",
+      "anchor": "Sec. 3.6, decision layer",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.decision.abstention:abstention_mask",
+        "mechex.decision.threshold:ThresholdDecision"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c23",
+      "statement": "The abstention boundary is selected to bound the false-positive rate below 5% because a false-adequate call is the harmful direction.",
+      "anchor": "Sec. 3.10, operating point",
+      "location": "Sec. 3.10, pp. 12-13",
+      "kind": "reported_value",
+      "code": [
+        "mechex.decision.abstention:select_boundary",
+        "mechex.guard.operating_point:select_operating_point"
+      ],
+      "reported": {
+        "false_positive_budget": 0.05
+      },
+      "note": ""
+    },
+    {
+      "id": "c24",
+      "statement": "MechEx assembles the molecular branch, the vascular branch, the coupling, the conservation head, the uncertainty head and the decision layer.",
+      "anchor": "Sec. 3.6, six components",
+      "location": "Sec. 3.6, pp. 10-11",
+      "kind": "method",
+      "code": [
+        "mechex.estimator:MechEx"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c25",
+      "statement": "Cohort construction runs five explicit transforms from the source fields to the exposure label.",
+      "anchor": "Sec. 3.3, five transforms",
+      "location": "Sec. 3.3, pp. 9-10",
+      "kind": "method",
+      "code": [
+        "mechex.cohort.transforms:transform_chain",
+        "mechex.cohort.transforms:unit_normalise_concentrations",
+        "mechex.cohort.transforms:time_align",
+        "mechex.cohort.transforms:perfused_fraction_to_delivery",
+        "mechex.cohort.transforms:exposure_index",
+        "mechex.cohort.transforms:dichotomise"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c26",
+      "statement": "The primary cohort comprises 8,333 records across three sites in two regions with 27 molecules.",
+      "anchor": "Sec. 2.1, study cohort",
+      "location": "Sec. 2.1, pp. 3-4",
+      "kind": "reported_value",
+      "code": [
+        "mechex.cohort.fixture:build_cohort_fixture",
+        "mechex.cohort.records:CohortFixture"
+      ],
+      "reported": {
+        "records": 8333.0,
+        "sites": 3.0,
+        "regions": 2.0,
+        "molecules": 27.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c27",
+      "statement": "The reference standard is tiered with 418 directly assayed records and a composite index for the remainder.",
+      "anchor": "Sec. 2.1 and Sec. 3.5, reference standard",
+      "location": "Sec. 2.1, pp. 3-4",
+      "kind": "reported_value",
+      "code": [
+        "mechex.cohort.reference:tier_counts",
+        "mechex.cohort.reference:tier_sensitivity"
+      ],
+      "reported": {
+        "tier1_records": 418.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c28",
+      "statement": "Reference adequacy is double-adjudicated at a Cohen's kappa of 0.86.",
+      "anchor": "Sec. 2.1, reference adequacy",
+      "location": "Sec. 2.1, pp. 3-4",
+      "kind": "reported_value",
+      "code": [
+        "mechex.cohort.reference:adjudicate",
+        "mechex.quantify.agreement:cohen_kappa"
+      ],
+      "reported": {
+        "kappa": 0.86
+      },
+      "note": ""
+    },
+    {
+      "id": "c29",
+      "statement": "Linkage is deterministic on a site-level de-identified study key so every derived variable traces to a source table.",
+      "anchor": "Sec. 3.3, linkage",
+      "location": "Sec. 3.3, pp. 9-10",
+      "kind": "method",
+      "code": [
+        "mechex.cohort.linkage:link",
+        "mechex.cohort.linkage:study_key"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c30",
+      "statement": "Records leave the cohort for an absent delivery bed, a non-diagnostic CTA or an unalignable concentration record.",
+      "anchor": "Sec. 3.3, exclusion rules",
+      "location": "Sec. 3.3, pp. 9-10",
+      "kind": "method",
+      "code": [
+        "mechex.cohort.linkage:excluded_records"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c31",
+      "statement": "Sites A and B are split 70/15/15 by patient into development, validation and test with a tenth of development withheld as a calibration set, and Site C is held out entirely.",
+      "anchor": "Sec. 3.4, splitting",
+      "location": "Sec. 3.4, p. 10",
+      "kind": "reported_value",
+      "code": [
+        "mechex.cohort.partition:partition"
+      ],
+      "reported": {
+        "development": 0.7,
+        "validation": 0.15,
+        "test": 0.15,
+        "calibration": 0.1
+      },
+      "note": ""
+    },
+    {
+      "id": "c32",
+      "statement": "Leakage control verifies that no patient or record crosses a partition boundary.",
+      "anchor": "Sec. 3.4, leakage control",
+      "location": "Sec. 3.4, p. 10",
+      "kind": "method",
+      "code": [
+        "mechex.cohort.partition:check_leakage"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c33",
+      "statement": "Missing concentration values are not imputed for the primary endpoint.",
+      "anchor": "Sec. 3.3, missingness",
+      "location": "Sec. 3.3, pp. 9-10",
+      "kind": "method",
+      "code": [
+        "mechex.cohort.linkage:excluded_records"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c34",
+      "statement": "Training minimises a composite of a concordance-oriented regression loss, a binary cross-entropy term on the adequacy label and the conservation penalty.",
+      "anchor": "Sec. 3.8, training",
+      "location": "Sec. 3.8, p. 12",
+      "kind": "method",
+      "code": [
+        "mechex.objective.composite:CompositeObjective"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c35",
+      "statement": "The regression term is concordance-oriented.",
+      "anchor": "Sec. 3.8, composite objective",
+      "location": "Sec. 3.8, p. 12",
+      "kind": "method",
+      "code": [
+        "mechex.objective.concordance:log_concordance_loss",
+        "mechex.objective.concordance:concordance_ccc"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c36",
+      "statement": "The adequacy term is a binary cross-entropy on the adequate/inadequate label.",
+      "anchor": "Sec. 3.8, composite objective",
+      "location": "Sec. 3.8, p. 12",
+      "kind": "method",
+      "code": [
+        "mechex.objective.calibration:adequacy_loss"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c37",
+      "statement": "Optimisation uses AdamW with cosine decay.",
+      "anchor": "Sec. 3.8, optimisation",
+      "location": "Sec. 3.8, p. 12",
+      "kind": "method",
+      "code": [
+        "mechex.optimise.optimiser:build_optimizer",
+        "mechex.optimise.schedule:build_scheduler"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c38",
+      "statement": "Early stopping monitors the validation partition with a patience of twelve epochs.",
+      "anchor": "Sec. 3.8, early stopping",
+      "location": "Sec. 3.8, p. 12",
+      "kind": "reported_value",
+      "code": [
+        "mechex.optimise.optimiser:EarlyStopping"
+      ],
+      "reported": {
+        "patience": 12.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c39",
+      "statement": "The batch size is 64 patients.",
+      "anchor": "Sec. 3.8, batch size",
+      "location": "Sec. 3.8, p. 12",
+      "kind": "reported_value",
+      "code": [
+        "mechex.settings:OptimiserConfig"
+      ],
+      "reported": {
+        "batch_size": 64.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c40",
+      "statement": "Five independent repeats with different random initialisations are run.",
+      "anchor": "Sec. 3.8, repeats",
+      "location": "Sec. 3.8, p. 12",
+      "kind": "reported_value",
+      "code": [
+        "mechex.fit.repeats:run_repeats",
+        "mechex.fit.repeats:repeat_seeds"
+      ],
+      "reported": {
+        "repeats": 5.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c41",
+      "statement": "Uncertainty on correlation-type metrics comes from patient-level bootstrap resampling with 2,000 resamples after averaging across repeats.",
+      "anchor": "Sec. 3.8 and Sec. 3.9, resampling",
+      "location": "Sec. 3.9, p. 12",
+      "kind": "reported_value",
+      "code": [
+        "mechex.quantify.bootstrap:bootstrap_ci",
+        "mechex.quantify.bootstrap:cluster_resample_indices"
+      ],
+      "reported": {
+        "resamples": 2000.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c42",
+      "statement": "Concordance is Lin's concordance correlation coefficient.",
+      "anchor": "Sec. 3.9, concordance",
+      "location": "Sec. 3.9, p. 12",
+      "kind": "method",
+      "code": [
+        "mechex.quantify.concordance:lin_ccc"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c43",
+      "statement": "AUROC differences are tested with the DeLong test.",
+      "anchor": "Sec. 3.9, discrimination",
+      "location": "Sec. 3.9, p. 12",
+      "kind": "method",
+      "code": [
+        "mechex.quantify.delong:delong_test"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c44",
+      "statement": "Classification agreement is tested with McNemar's test.",
+      "anchor": "Sec. 3.9, agreement",
+      "location": "Sec. 3.9, p. 12",
+      "kind": "method",
+      "code": [
+        "mechex.quantify.agreement:mcnemar_test"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c45",
+      "statement": "Net benefit comes from decision-curve analysis.",
+      "anchor": "Sec. 3.9, net benefit",
+      "location": "Sec. 3.9, p. 12",
+      "kind": "method",
+      "code": [
+        "mechex.quantify.netbenefit:decision_curve"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c46",
+      "statement": "Reader differences are tested with a mixed-effects logistic model carrying a random intercept per reader.",
+      "anchor": "Sec. 2.6, reader study",
+      "location": "Sec. 2.6, pp. 7-8",
+      "kind": "method",
+      "code": [
+        "mechex.quantify.mixed:mixed_effects_logistic"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c47",
+      "statement": "Stratified comparisons are controlled with the Benjamini-Hochberg procedure at a false-discovery rate of 0.05.",
+      "anchor": "Sec. 3.9, multiplicity",
+      "location": "Sec. 3.9, p. 12",
+      "kind": "reported_value",
+      "code": [
+        "mechex.quantify.multiplicity:benjamini_hochberg"
+      ],
+      "reported": {
+        "fdr": 0.05
+      },
+      "note": ""
+    },
+    {
+      "id": "c48",
+      "statement": "Calibration is reported as expected calibration error over fifteen equal-width bins.",
+      "anchor": "Sec. 3.9, calibration",
+      "location": "Sec. 3.9, p. 12",
+      "kind": "reported_value",
+      "code": [
+        "mechex.quantify.calibration:expected_calibration_error"
+      ],
+      "reported": {
+        "bins": 15.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c49",
+      "statement": "Results are reported for each site rather than pooled, with the external site fully held out.",
+      "anchor": "Sec. 3.9, per-site reporting",
+      "location": "Sec. 3.9, p. 12",
+      "kind": "method",
+      "code": [
+        "mechex.assess.external:evaluate_external"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c50",
+      "statement": "Failure modes form a five-category taxonomy over the worst decile of absolute error, each with its frequency and harm direction.",
+      "anchor": "Sec. 3.10, failure taxonomy",
+      "location": "Sec. 3.10, pp. 12-13",
+      "kind": "reported_value",
+      "code": [
+        "mechex.guard.failure_modes:classify_failures",
+        "mechex.guard.failure_modes:FAILURE_TYPES"
+      ],
+      "reported": {
+        "categories": 5.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c51",
+      "statement": "The perturbation-response matrix reports the response of the estimate to input perturbation.",
+      "anchor": "Sec. 3.10, robustness",
+      "location": "Sec. 3.10, pp. 12-13",
+      "kind": "method",
+      "code": [
+        "mechex.guard.perturbation:response_matrix",
+        "mechex.guard.perturbation:DEFAULT_PERTURBATIONS"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c52",
+      "statement": "Silent-failure monitoring is a drift detector over the input and residual distributions, calibrated below one alert per thousand stationary cases.",
+      "anchor": "Sec. 3.10, silent-failure monitoring",
+      "location": "Sec. 3.10, pp. 12-13",
+      "kind": "reported_value",
+      "code": [
+        "mechex.guard.drift:calibrate_threshold",
+        "mechex.guard.drift:StandardisedDriftDetector"
+      ],
+      "reported": {
+        "alert_ceiling": 0.001
+      },
+      "note": ""
+    },
+    {
+      "id": "c53",
+      "statement": "The int8 variant uses post-training quantisation with per-channel scales and is evaluated on the identical test set.",
+      "anchor": "Sec. 3.8, quantisation",
+      "location": "Sec. 3.8, p. 12",
+      "kind": "method",
+      "code": [
+        "mechex.compress.int8:quantise_linear_per_channel",
+        "mechex.compress.int8:quantise_module"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c54",
+      "statement": "The in vitro arm treats four compounds at three concentrations with and without efflux inhibition, at least three replicates, read by two independent methods.",
+      "anchor": "Sec. 3.11, in vitro arm",
+      "location": "Sec. 3.11, p. 13",
+      "kind": "reported_value",
+      "code": [
+        "mechex.assay.accumulation:AssayDesign",
+        "mechex.assay.accumulation:method_agreement"
+      ],
+      "reported": {
+        "compounds": 4.0,
+        "concentrations": 3.0,
+        "min_replicates": 3.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c55",
+      "statement": "Efflux-substrate propensity is the dominant negative determinant of arterial-wall retention, corroborated in vitro.",
+      "anchor": "Sec. 4 and Sec. 3.11",
+      "location": "Sec. 4, pp. 14-19",
+      "kind": "reported_value",
+      "code": [
+        "mechex.assay.accumulation:validate_efflux_hypothesis",
+        "mechex.basis.projection:PartitionHead.attribution"
+      ],
+      "reported": {
+        "rho": 0.87,
+        "p": 0.002,
+        "ratio_low": 1.08,
+        "ratio_high": 3.42
+      },
+      "note": ""
+    },
+    {
+      "id": "c56",
+      "statement": "Exposure-guided ranking changes the candidate shortlist: fourteen molecules move at least five ranks and nine of the mechanism top ten leave the shortlist.",
+      "anchor": "Sec. 2.8, ranking",
+      "location": "Sec. 2.8, p. 8",
+      "kind": "reported_value",
+      "code": [
+        "mechex.assess.ranking:ranking_summary",
+        "mechex.assess.ranking:shortlist_effect"
+      ],
+      "reported": {
+        "moved_five_ranks": 14.0,
+        "rho": 0.31,
+        "excluded": 9.0,
+        "promoted": 6.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c57",
+      "statement": "Silent-mode deployment recorded integration, time and adoption endpoints over fourteen weeks at three sites.",
+      "anchor": "Sec. 2.9 and Sec. 3.12, deployment",
+      "location": "Sec. 2.9, p. 8",
+      "kind": "reported_value",
+      "code": [
+        "mechex.assess.silent_mode:summarise_deployment",
+        "mechex.assess.silent_mode:weekly_adoption"
+      ],
+      "reported": {
+        "weeks": 14.0,
+        "sites": 3.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c58",
+      "statement": "Twelve readers assessed the same test set unaided and aided, with the team's gain tested against the best isolated arm.",
+      "anchor": "Sec. 2.6, reader study",
+      "location": "Sec. 2.6, pp. 7-8",
+      "kind": "reported_value",
+      "code": [
+        "mechex.assess.human_model:team_contrast",
+        "mechex.assess.human_model:inter_reader_agreement"
+      ],
+      "reported": {
+        "readers": 12.0,
+        "team_gain": 0.037,
+        "kappa_unassisted": 0.58,
+        "kappa_assisted": 0.71
+      },
+      "note": ""
+    },
+    {
+      "id": "c59",
+      "statement": "Performance is stratified by severity, drug class and demographic and comorbidity axes, each with its size and concordance decrement.",
+      "anchor": "Sec. 2.4 and Table 3, stratification",
+      "location": "Sec. 2.4, p. 6",
+      "kind": "method",
+      "code": [
+        "mechex.assess.strata:evaluate_strata",
+        "mechex.assess.strata:stratum_sizes"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c60",
+      "statement": "Generalisation is assessed under four independent distribution shifts with a pre-specified banding of graceful, moderate and severe.",
+      "anchor": "Sec. 2.5 and Table 4, shifts",
+      "location": "Sec. 2.5, pp. 6-7",
+      "kind": "method",
+      "code": [
+        "mechex.assess.shift:generalisation_table",
+        "mechex.quantify.shift:Banding"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c61",
+      "statement": "The pre-specified success criteria at the external site are concordance of at least 0.75 and AUROC of at least 0.85.",
+      "anchor": "Sec. 2.2 and Sec. 3.5, criteria",
+      "location": "Sec. 2.2, pp. 4-5",
+      "kind": "reported_value",
+      "code": [
+        "mechex.assess.external:criterion_outcome"
+      ],
+      "reported": {
+        "ccc_threshold": 0.75,
+        "auroc_threshold": 0.85
+      },
+      "note": ""
+    },
+    {
+      "id": "c62",
+      "statement": "Fold error is geometric.",
+      "anchor": "Sec. 2.2, fold error",
+      "location": "Sec. 2.2, pp. 4-5",
+      "kind": "method",
+      "code": [
+        "mechex.quantify.fold:geometric_fold_error"
+      ],
+      "reported": {},
+      "note": ""
+    },
+    {
+      "id": "c63",
+      "statement": "Every baseline in the main comparison was reconstructed and trained in-house on the identical split with identical preprocessing and tuning budget.",
+      "anchor": "Table 1, note",
+      "location": "Table 1, p. 5",
+      "kind": "method",
+      "code": [
+        "mechex.bench.runner:run_baseline",
+        "mechex.bench.registry:BASELINES"
+      ],
+      "reported": {
+        "comparators": 12.0
+      },
+      "note": ""
+    },
+    {
+      "id": "c64",
+      "statement": "The mechanism-only repurposing score is the current computational default and carries no delivery term.",
+      "anchor": "Table 1, B9",
+      "location": "Table 1, p. 5",
+      "kind": "reported_value",
+      "code": [
+        "mechex.bench.mechanistic:mechanism_only_score"
+      ],
+      "reported": {
+        "ccc": 0.431,
+        "auroc": 0.628
+      },
+      "note": ""
+    },
+    {
+      "id": "c65",
+      "statement": "Coupling adds concordance over the strongest single-branch model and the difference against the strongest unconstrained fusion is inside sampling noise while inconsistency falls by an order of magnitude.",
+      "anchor": "Abstract and Sec. 2.2-2.3",
+      "location": "Sec. 2.3, pp. 5-6",
+      "kind": "reported_value",
+      "code": [
+        "mechex.assess.external:paired_concordance_contrast",
+        "mechex.conservation.inconsistency:inconsistency_rate"
+      ],
+      "reported": {
+        "ccc_gain": 0.133,
+        "auroc_gain": 0.091,
+        "delta_ccc": 0.008,
+        "delta_auroc": -0.004,
+        "inconsistency_full": 2.1,
+        "inconsistency_unconstrained": 18.7
+      },
+      "note": ""
+    },
+    {
+      "id": "c66",
+      "statement": "Removing the lowest-confidence tenth of cases raises the retained AUROC.",
+      "anchor": "Sec. 4, abstention",
+      "location": "Sec. 4, pp. 14-19",
+      "kind": "reported_value",
+      "code": [
+        "mechex.assess.abstain:retention_at"
+      ],
+      "reported": {
+        "quantile": 0.1,
+        "retained_auroc": 0.918
+      },
+      "note": ""
+    },
+    {
+      "id": "c67",
+      "statement": "Frozen encoders with modified heads were preferred to full fine-tuning under an identical budget.",
+      "anchor": "Sec. 3.6 and Sec. 4, design options",
+      "location": "Sec. 4, pp. 14-19",
+      "kind": "reported_value",
+      "code": [
+        "mechex.bench.single_branch:FrozenHeadModel"
+      ],
+      "reported": {
+        "frozen_ccc": 0.819,
+        "finetuned_ccc": 0.784
+      },
+      "note": ""
+    },
+    {
+      "id": "c68",
+      "statement": "The interaction term carries information neither branch expresses alone, so the coupled model exceeds the sum of the two branch contributions.",
+      "anchor": "Table 2, interaction row",
+      "location": "Table 2, p. 6",
+      "kind": "reported_value",
+      "code": [
+        "mechex.conservation.law:interaction_factor"
+      ],
+      "reported": {
+        "excess_ccc": 0.078,
+        "excess_auroc": 0.053
+      },
+      "note": ""
+    }
+  ],
+  "claim_count": 68,
+  "resolved_references": 108,
+  "unresolved_references": [],
+  "reference_resolutions": [
+    {
+      "reference": "mechex.assay.accumulation:AssayDesign",
+      "resolved": true,
+      "detail": "resolved on mechex.assay.accumulation"
+    },
+    {
+      "reference": "mechex.assay.accumulation:method_agreement",
+      "resolved": true,
+      "detail": "resolved on mechex.assay.accumulation"
+    },
+    {
+      "reference": "mechex.assay.accumulation:validate_efflux_hypothesis",
+      "resolved": true,
+      "detail": "resolved on mechex.assay.accumulation"
+    },
+    {
+      "reference": "mechex.assess.abstain:retention_at",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.abstain"
+    },
+    {
+      "reference": "mechex.assess.external:criterion_outcome",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.external"
+    },
+    {
+      "reference": "mechex.assess.external:evaluate_external",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.external"
+    },
+    {
+      "reference": "mechex.assess.external:paired_concordance_contrast",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.external"
+    },
+    {
+      "reference": "mechex.assess.human_model:inter_reader_agreement",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.human_model"
+    },
+    {
+      "reference": "mechex.assess.human_model:team_contrast",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.human_model"
+    },
+    {
+      "reference": "mechex.assess.ranking:ranking_summary",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.ranking"
+    },
+    {
+      "reference": "mechex.assess.ranking:shortlist_effect",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.ranking"
+    },
+    {
+      "reference": "mechex.assess.shift:generalisation_table",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.shift"
+    },
+    {
+      "reference": "mechex.assess.silent_mode:summarise_deployment",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.silent_mode"
+    },
+    {
+      "reference": "mechex.assess.silent_mode:weekly_adoption",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.silent_mode"
+    },
+    {
+      "reference": "mechex.assess.strata:evaluate_strata",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.strata"
+    },
+    {
+      "reference": "mechex.assess.strata:stratum_sizes",
+      "resolved": true,
+      "detail": "resolved on mechex.assess.strata"
+    },
+    {
+      "reference": "mechex.basis.chemistry:descriptors",
+      "resolved": true,
+      "detail": "resolved on mechex.basis.chemistry"
+    },
+    {
+      "reference": "mechex.basis.graph:MoleculeGraph",
+      "resolved": true,
+      "detail": "resolved on mechex.basis.graph"
+    },
+    {
+      "reference": "mechex.basis.projection:MolecularBranch",
+      "resolved": true,
+      "detail": "resolved on mechex.basis.projection"
+    },
+    {
+      "reference": "mechex.basis.projection:PartitionHead",
+      "resolved": true,
+      "detail": "resolved on mechex.basis.projection"
+    },
+    {
+      "reference": "mechex.basis.projection:PartitionHead.attribution",
+      "resolved": true,
+      "detail": "resolved on mechex.basis.projection"
+    },
+    {
+      "reference": "mechex.basis.transformer:BondTypeBias",
+      "resolved": true,
+      "detail": "resolved on mechex.basis.transformer"
+    },
+    {
+      "reference": "mechex.basis.transformer:MolecularAttention",
+      "resolved": true,
+      "detail": "resolved on mechex.basis.transformer"
+    },
+    {
+      "reference": "mechex.basis.transformer:MolecularBasisEncoder",
+      "resolved": true,
+      "detail": "resolved on mechex.basis.transformer"
+    },
+    {
+      "reference": "mechex.basis.transformer:RadialDistanceBias",
+      "resolved": true,
+      "detail": "resolved on mechex.basis.transformer"
+    },
+    {
+      "reference": "mechex.bench.mechanistic:mechanism_only_score",
+      "resolved": true,
+      "detail": "resolved on mechex.bench.mechanistic"
+    },
+    {
+      "reference": "mechex.bench.registry:BASELINES",
+      "resolved": true,
+      "detail": "resolved on mechex.bench.registry"
+    },
+    {
+      "reference": "mechex.bench.runner:run_baseline",
+      "resolved": true,
+      "detail": "resolved on mechex.bench.runner"
+    },
+    {
+      "reference": "mechex.bench.single_branch:FrozenHeadModel",
+      "resolved": true,
+      "detail": "resolved on mechex.bench.single_branch"
+    },
+    {
+      "reference": "mechex.cohort.fixture:build_cohort_fixture",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.fixture"
+    },
+    {
+      "reference": "mechex.cohort.linkage:excluded_records",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.linkage"
+    },
+    {
+      "reference": "mechex.cohort.linkage:link",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.linkage"
+    },
+    {
+      "reference": "mechex.cohort.linkage:study_key",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.linkage"
+    },
+    {
+      "reference": "mechex.cohort.partition:check_leakage",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.partition"
+    },
+    {
+      "reference": "mechex.cohort.partition:partition",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.partition"
+    },
+    {
+      "reference": "mechex.cohort.records:CohortFixture",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.records"
+    },
+    {
+      "reference": "mechex.cohort.reference:adjudicate",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.reference"
+    },
+    {
+      "reference": "mechex.cohort.reference:freeze_threshold",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.reference"
+    },
+    {
+      "reference": "mechex.cohort.reference:tier_counts",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.reference"
+    },
+    {
+      "reference": "mechex.cohort.reference:tier_sensitivity",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.reference"
+    },
+    {
+      "reference": "mechex.cohort.transforms:dichotomise",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.transforms"
+    },
+    {
+      "reference": "mechex.cohort.transforms:exposure_index",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.transforms"
+    },
+    {
+      "reference": "mechex.cohort.transforms:perfused_fraction_to_delivery",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.transforms"
+    },
+    {
+      "reference": "mechex.cohort.transforms:relative_exposure",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.transforms"
+    },
+    {
+      "reference": "mechex.cohort.transforms:time_align",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.transforms"
+    },
+    {
+      "reference": "mechex.cohort.transforms:transform_chain",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.transforms"
+    },
+    {
+      "reference": "mechex.cohort.transforms:unit_normalise_concentrations",
+      "resolved": true,
+      "detail": "resolved on mechex.cohort.transforms"
+    },
+    {
+      "reference": "mechex.compress.int8:quantise_linear_per_channel",
+      "resolved": true,
+      "detail": "resolved on mechex.compress.int8"
+    },
+    {
+      "reference": "mechex.compress.int8:quantise_module",
+      "resolved": true,
+      "detail": "resolved on mechex.compress.int8"
+    },
+    {
+      "reference": "mechex.conservation.inconsistency:inconsistency_flags",
+      "resolved": true,
+      "detail": "resolved on mechex.conservation.inconsistency"
+    },
+    {
+      "reference": "mechex.conservation.inconsistency:inconsistency_rate",
+      "resolved": true,
+      "detail": "resolved on mechex.conservation.inconsistency"
+    },
+    {
+      "reference": "mechex.conservation.law:interaction_factor",
+      "resolved": true,
+      "detail": "resolved on mechex.conservation.law"
+    },
+    {
+      "reference": "mechex.conservation.law:systemic_availability",
+      "resolved": true,
+      "detail": "resolved on mechex.conservation.law"
+    },
+    {
+      "reference": "mechex.conservation.penalty:margin_penalty",
+      "resolved": true,
+      "detail": "resolved on mechex.conservation.penalty"
+    },
+    {
+      "reference": "mechex.conservation.residual:ConservationHead",
+      "resolved": true,
+      "detail": "resolved on mechex.conservation.residual"
+    },
+    {
+      "reference": "mechex.conservation.residual:relative_residual",
+      "resolved": true,
+      "detail": "resolved on mechex.conservation.residual"
+    },
+    {
+      "reference": "mechex.coupling.additive:build_coupling",
+      "resolved": true,
+      "detail": "resolved on mechex.coupling.additive"
+    },
+    {
+      "reference": "mechex.coupling.bidirectional:BidirectionalCrossAttention",
+      "resolved": true,
+      "detail": "resolved on mechex.coupling.bidirectional"
+    },
+    {
+      "reference": "mechex.decision.abstention:abstention_mask",
+      "resolved": true,
+      "detail": "resolved on mechex.decision.abstention"
+    },
+    {
+      "reference": "mechex.decision.abstention:select_boundary",
+      "resolved": true,
+      "detail": "resolved on mechex.decision.abstention"
+    },
+    {
+      "reference": "mechex.decision.threshold:ThresholdDecision",
+      "resolved": true,
+      "detail": "resolved on mechex.decision.threshold"
+    },
+    {
+      "reference": "mechex.decision.threshold:adequacy_boundary",
+      "resolved": true,
+      "detail": "resolved on mechex.decision.threshold"
+    },
+    {
+      "reference": "mechex.decision.threshold:exposure_index",
+      "resolved": true,
+      "detail": "resolved on mechex.decision.threshold"
+    },
+    {
+      "reference": "mechex.estimator:MechEx",
+      "resolved": true,
+      "detail": "resolved on mechex.estimator"
+    },
+    {
+      "reference": "mechex.fit.repeats:repeat_seeds",
+      "resolved": true,
+      "detail": "resolved on mechex.fit.repeats"
+    },
+    {
+      "reference": "mechex.fit.repeats:run_repeats",
+      "resolved": true,
+      "detail": "resolved on mechex.fit.repeats"
+    },
+    {
+      "reference": "mechex.guard.drift:StandardisedDriftDetector",
+      "resolved": true,
+      "detail": "resolved on mechex.guard.drift"
+    },
+    {
+      "reference": "mechex.guard.drift:calibrate_threshold",
+      "resolved": true,
+      "detail": "resolved on mechex.guard.drift"
+    },
+    {
+      "reference": "mechex.guard.failure_modes:FAILURE_TYPES",
+      "resolved": true,
+      "detail": "resolved on mechex.guard.failure_modes"
+    },
+    {
+      "reference": "mechex.guard.failure_modes:classify_failures",
+      "resolved": true,
+      "detail": "resolved on mechex.guard.failure_modes"
+    },
+    {
+      "reference": "mechex.guard.operating_point:select_operating_point",
+      "resolved": true,
+      "detail": "resolved on mechex.guard.operating_point"
+    },
+    {
+      "reference": "mechex.guard.perturbation:DEFAULT_PERTURBATIONS",
+      "resolved": true,
+      "detail": "resolved on mechex.guard.perturbation"
+    },
+    {
+      "reference": "mechex.guard.perturbation:response_matrix",
+      "resolved": true,
+      "detail": "resolved on mechex.guard.perturbation"
+    },
+    {
+      "reference": "mechex.objective.calibration:adequacy_loss",
+      "resolved": true,
+      "detail": "resolved on mechex.objective.calibration"
+    },
+    {
+      "reference": "mechex.objective.composite:CompositeObjective",
+      "resolved": true,
+      "detail": "resolved on mechex.objective.composite"
+    },
+    {
+      "reference": "mechex.objective.concordance:concordance_ccc",
+      "resolved": true,
+      "detail": "resolved on mechex.objective.concordance"
+    },
+    {
+      "reference": "mechex.objective.concordance:log_concordance_loss",
+      "resolved": true,
+      "detail": "resolved on mechex.objective.concordance"
+    },
+    {
+      "reference": "mechex.optimise.optimiser:EarlyStopping",
+      "resolved": true,
+      "detail": "resolved on mechex.optimise.optimiser"
+    },
+    {
+      "reference": "mechex.optimise.optimiser:build_optimizer",
+      "resolved": true,
+      "detail": "resolved on mechex.optimise.optimiser"
+    },
+    {
+      "reference": "mechex.optimise.schedule:build_scheduler",
+      "resolved": true,
+      "detail": "resolved on mechex.optimise.schedule"
+    },
+    {
+      "reference": "mechex.quantify.agreement:cohen_kappa",
+      "resolved": true,
+      "detail": "resolved on mechex.quantify.agreement"
+    },
+    {
+      "reference": "mechex.quantify.agreement:mcnemar_test",
+      "resolved": true,
+      "detail": "resolved on mechex.quantify.agreement"
+    },
+    {
+      "reference": "mechex.quantify.bootstrap:bootstrap_ci",
+      "resolved": true,
+      "detail": "resolved on mechex.quantify.bootstrap"
+    },
+    {
+      "reference": "mechex.quantify.bootstrap:cluster_resample_indices",
+      "resolved": true,
+      "detail": "resolved on mechex.quantify.bootstrap"
+    },
+    {
+      "reference": "mechex.quantify.calibration:expected_calibration_error",
+      "resolved": true,
+      "detail": "resolved on mechex.quantify.calibration"
+    },
+    {
+      "reference": "mechex.quantify.concordance:lin_ccc",
+      "resolved": true,
+      "detail": "resolved on mechex.quantify.concordance"
+    },
+    {
+      "reference": "mechex.quantify.delong:delong_test",
+      "resolved": true,
+      "detail": "resolved on mechex.quantify.delong"
+    },
+    {
+      "reference": "mechex.quantify.fold:geometric_fold_error",
+      "resolved": true,
+      "detail": "resolved on mechex.quantify.fold"
+    },
+    {
+      "reference": "mechex.quantify.mixed:mixed_effects_logistic",
+      "resolved": true,
+      "detail": "resolved on mechex.quantify.mixed"
+    },
+    {
+      "reference": "mechex.quantify.multiplicity:benjamini_hochberg",
+      "resolved": true,
+      "detail": "resolved on mechex.quantify.multiplicity"
+    },
+    {
+      "reference": "mechex.quantify.netbenefit:decision_curve",
+      "resolved": true,
+      "detail": "resolved on mechex.quantify.netbenefit"
+    },
+    {
+      "reference": "mechex.quantify.shift:Banding",
+      "resolved": true,
+      "detail": "resolved on mechex.quantify.shift"
+    },
+    {
+      "reference": "mechex.settings:OptimiserConfig",
+      "resolved": true,
+      "detail": "resolved on mechex.settings"
+    },
+    {
+      "reference": "mechex.uncertainty.ensemble:DeepEnsembleHeads",
+      "resolved": true,
+      "detail": "resolved on mechex.uncertainty.ensemble"
+    },
+    {
+      "reference": "mechex.uncertainty.evidential:EvidentialHead",
+      "resolved": true,
+      "detail": "resolved on mechex.uncertainty.evidential"
+    },
+    {
+      "reference": "mechex.uncertainty.evidential:PointHead",
+      "resolved": true,
+      "detail": "resolved on mechex.uncertainty.evidential"
+    },
+    {
+      "reference": "mechex.uncertainty.heads:UncertaintyHead",
+      "resolved": true,
+      "detail": "resolved on mechex.uncertainty.heads"
+    },
+    {
+      "reference": "mechex.uncertainty.isotonic:IsotonicRecalibrator",
+      "resolved": true,
+      "detail": "resolved on mechex.uncertainty.isotonic"
+    },
+    {
+      "reference": "mechex.vascular.encoder:ConvStem",
+      "resolved": true,
+      "detail": "resolved on mechex.vascular.encoder"
+    },
+    {
+      "reference": "mechex.vascular.encoder:TokenAttention",
+      "resolved": true,
+      "detail": "resolved on mechex.vascular.encoder"
+    },
+    {
+      "reference": "mechex.vascular.encoder:VolumetricCTEncoder",
+      "resolved": true,
+      "detail": "resolved on mechex.vascular.encoder"
+    },
+    {
+      "reference": "mechex.vascular.perfusion:delivery_term",
+      "resolved": true,
+      "detail": "resolved on mechex.vascular.perfusion"
+    },
+    {
+      "reference": "mechex.vascular.perfusion:perfused_fraction",
+      "resolved": true,
+      "detail": "resolved on mechex.vascular.perfusion"
+    },
+    {
+      "reference": "mechex.vascular.projection:DeliveredFractionHead",
+      "resolved": true,
+      "detail": "resolved on mechex.vascular.projection"
+    },
+    {
+      "reference": "mechex.vascular.projection:VascularBranch",
+      "resolved": true,
+      "detail": "resolved on mechex.vascular.projection"
+    },
+    {
+      "reference": "mechex.vascular.volume:normalise_per_scan",
+      "resolved": true,
+      "detail": "resolved on mechex.vascular.volume"
+    },
+    {
+      "reference": "mechex.vascular.volume:resample_isotropic",
+      "resolved": true,
+      "detail": "resolved on mechex.vascular.volume"
+    },
+    {
+      "reference": "mechex.vascular.volume:window_to_contrast_range",
+      "resolved": true,
+      "detail": "resolved on mechex.vascular.volume"
+    }
+  ],
+  "deviations": [
+    {
+      "id": "dev1-private-cohort",
+      "paper_location": "Sec. 2.1; Sec. 3.1-3.5; Data availability",
+      "deviation": "The three-site two-region de-identified cohort is not distributed, so the shipped pipeline reads a schema-compatible cohort fixture written by the release. Every cohort-level quantity in the manuscript stays out of reach of this checkout.",
+      "justification": "The manuscript states the raw clinical records are available only from the corresponding author on reasonable request. A fixture that reproduces the schema, the strata sizes and the causal structure lets every mechanism run without inventing a single clinical result.",
+      "kind": "unavailable_input"
+    },
+    {
+      "id": "dev2-conservation-denominator",
+      "paper_location": "Sec. 3.6, Eq. (1) and the sentence that follows it",
+      "deviation": "Eq. (1) writes the residual against the model product while the next sentence calls that quantity concentration-derived. The release takes the denominator as the concentration-derived reference.",
+      "justification": "A relative residual needs the measured quantity in the denominator; against the fit itself the ratio is a self-consistency identity rather than an error.",
+      "kind": "manuscript_ambiguity"
+    },
+    {
+      "id": "dev3-physics-feature",
+      "paper_location": "Sec. 3.3, fourth transform; Sec. 3.6, Eq. (1)",
+      "deviation": "The exposure estimate is produced by the uncertainty head from the coupling embedding together with the log of the conservation product scaled by the delivery term, rather than being read off the product directly.",
+      "justification": "The manuscript defines the exposure index as the concentration-time integral scaled by the delivery term while Eq. (1) already puts the delivered fraction inside the availability. Feeding the product in as a feature keeps both statements live without double-counting the delivery term in the reported index.",
+      "kind": "manuscript_ambiguity"
+    },
+    {
+      "id": "dev4-threshold-normalisation",
+      "paper_location": "Sec. 3.5, threshold; Sec. 3.3, fifth transform",
+      "deviation": "The adequacy boundary is applied to a per-molecule normalised exposure, with adequate defined as a relative exposure of at least 1 + tau.",
+      "justification": "The manuscript fixes one threshold for every molecule, which is only meaningful on a dimensionless index. The normalisation statistic is estimated on the development split alone.",
+      "kind": "engineering_default"
+    },
+    {
+      "id": "dev5-composite-loss-weights",
+      "paper_location": "Sec. 3.8, training",
+      "deviation": "The composite weights are not reported, so the concordance, adequacy, conservation and evidential terms enter at weight one, exposed in configs/objective/ and the train group.",
+      "justification": "The manuscript names the four terms and the three constraint settings but not their relative weights. Exposing them keeps the choice auditable rather than implicit.",
+      "kind": "engineering_default"
+    },
+    {
+      "id": "dev6-optimiser-schedule",
+      "paper_location": "Sec. 3.8, optimiser",
+      "deviation": "AdamW with cosine decay is implemented as reported; the learning rate, weight decay, epoch count, warmup fraction, minimum learning rate and gradient-clipping norm are engineering defaults exposed in configs/train/.",
+      "justification": "The manuscript reports the optimiser family, the schedule and the batch size but not these values.",
+      "kind": "engineering_default"
+    },
+    {
+      "id": "dev7-precision-and-world-size",
+      "paper_location": "Sec. 3.8, training",
+      "deviation": "Precision defaults to fp32 with gradient accumulation one and world size one; the int8 variant is applied after training with per-channel scales as reported.",
+      "justification": "The manuscript does not state the mixed-precision setting or the process count. The release defaults to the setting that reproduces exactly on a single host.",
+      "kind": "engineering_default"
+    },
+    {
+      "id": "dev8-encoder-widths",
+      "paper_location": "Sec. 3.6, architecture",
+      "deviation": "Both branches use hidden width 128, four molecular transformer layers and a convolutional stem with a token-attention stack; the coupling uses width 128 with four heads. All of these are engineering defaults.",
+      "justification": "The manuscript names the encoder families and the frozen-head configuration but no widths or depths.",
+      "kind": "engineering_default"
+    },
+    {
+      "id": "dev9-arterial-contrast-window",
+      "paper_location": "Sec. 3.8, input preparation",
+      "deviation": "The arterial contrast window is 100 to 700 Hounsfield units, an engineering default in configs/vascular/.",
+      "justification": "The manuscript states that volumes are windowed to the arterial contrast range without giving the bounds.",
+      "kind": "engineering_default"
+    },
+    {
+      "id": "dev10-volume-grid",
+      "paper_location": "Sec. 3.8, input preparation",
+      "deviation": "Volumes are resampled to isotropic 1.0 mm spacing as reported and then cropped or padded to a fixed 64x64x48 grid; the grid extent is an engineering default.",
+      "justification": "The manuscript reports the isotropic spacing but not the tensor the network receives.",
+      "kind": "engineering_default"
+    },
+    {
+      "id": "dev11-residual-tolerance",
+      "paper_location": "Sec. 2.3, definition of the physical-inconsistency rate",
+      "deviation": "The pre-specified tolerance on the conservation residual is 0.20 and the margin smoothing is 0.05, both engineering defaults exposed in configs/conservation/.",
+      "justification": "The manuscript defines the inconsistency rate relative to a pre-specified tolerance without stating its value.",
+      "kind": "engineering_default"
+    },
+    {
+      "id": "dev12-descriptor-definitions",
+      "paper_location": "Sec. 4 and Sec. 3.6, molecular derivation",
+      "deviation": "The eight physicochemical descriptors, their fragment contributions and the efflux composite are the release's own engineering definitions. The attribution reports the fitted loadings of these descriptors, not a re-measurement of the manuscript's.",
+      "justification": "The manuscript reports the ranking of descriptor families rather than the descriptor recipe, so the recipe has to be stated somewhere; it lives in the chemistry module rather than in a config because it belongs to the descriptor definition.",
+      "kind": "engineering_default"
+    },
+    {
+      "id": "dev13-constructed-molecule-graphs",
+      "paper_location": "Sec. 3.6, molecular derivation",
+      "deviation": "Atom and bond graphs are schema stand-ins that exercise the native featurisation; no source structure, SMILES string or catalogue identifier is redistributed.",
+      "justification": "The manuscript does not release structures for the 27 molecules, and redistributing them would be a third-party claim the release cannot make.",
+      "kind": "unavailable_input"
+    },
+    {
+      "id": "dev14-interaction-scalar-map",
+      "paper_location": "Sec. 3.6, Eq. (1)",
+      "deviation": "The interaction term comes from a softplus head shifted by -0.5, which keeps 1 + epsilon strictly positive.",
+      "justification": "The manuscript constrains the product to be physically admissible but does not give a parameterisation; a strictly positive factor is the minimal way to respect it.",
+      "kind": "engineering_default"
+    },
+    {
+      "id": "dev15-reader-study-not-reproduced",
+      "paper_location": "Sec. 2.6 and Supplementary Table SA-4",
+      "deviation": "The twelve-reader, three-arm study is human data the release does not hold. The mixed-effects contrast, the kappa agreement and the skill gradient are implemented and exercised on a reader fixture; the reported values stay NOT_RUN.",
+      "justification": "Reader assessments are human data collected at clinical sites and are not part of any distributed artefact.",
+      "kind": "unavailable_input"
+    },
+    {
+      "id": "dev16-in-vitro-arm-not-reproduced",
+      "paper_location": "Sec. 3.11, in vitro arm",
+      "deviation": "The efflux arm is a wet-laboratory study. The accumulation-ratio, method-agreement and rank-correlation machinery is implemented and exercised on a fixture assay table; the reported rho and P stay NOT_RUN.",
+      "justification": "The assays need purchased human vascular cells and a laboratory, which a code checkout cannot supply.",
+      "kind": "unavailable_input"
+    },
+    {
+      "id": "dev17-silent-mode-not-reproduced",
+      "paper_location": "Sec. 2.9 and Sec. 3.12, deployment",
+      "deviation": "The fourteen-week observational deployment is a clinical workflow study recorded at three sites. The endpoint machinery runs on a deployment fixture; the reported endpoints stay NOT_RUN.",
+      "justification": "Recommendation logs are site data that the release does not hold.",
+      "kind": "unavailable_input"
+    },
+    {
+      "id": "dev18-location-of-the-model-arm",
+      "paper_location": "Sec. 2.6, model-alone arm",
+      "deviation": "The model-alone arm reuses the frozen external-site numbers rather than resampling, following the manuscript's own statement that a second modelling number with inconsistent numbers is not introduced.",
+      "justification": "Keeping one modelling number for the model arm is what the manuscript asks for; producing a second would create exactly the inconsistency it avoids.",
+      "kind": "manuscript_decision"
+    }
+  ],
+  "deviation_count": 18
+}

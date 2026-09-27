@@ -1,0 +1,71 @@
+"""Fitting: training engine, checkpoints, repeated runs and distributed wrapping."""
+
+from mechex.fit.checkpoint import (
+    CHECKPOINT_VERSION,
+    build_checkpoint,
+    capture_rng_state,
+    config_from_checkpoint,
+    load_checkpoint,
+    metrics_from_checkpoint,
+    restore_into,
+    restore_rng_state,
+    save_checkpoint,
+    seed_from_checkpoint,
+    tensor_payload_digest,
+)
+from mechex.fit.distributed import (
+    barrier,
+    destroy,
+    distributed_available,
+    initialise,
+    is_main_process,
+    rank,
+    world_size,
+    wrap_distributed,
+)
+from mechex.fit.engine import (
+    EpochRecord,
+    FitResult,
+    Trainer,
+    evaluate_partition,
+    fit_once,
+)
+from mechex.fit.repeats import (
+    RepeatSummary,
+    aggregate_across_repeats,
+    config_for_repeat,
+    repeat_seeds,
+    run_repeats,
+)
+
+__all__ = [
+    "CHECKPOINT_VERSION",
+    "EpochRecord",
+    "FitResult",
+    "RepeatSummary",
+    "Trainer",
+    "aggregate_across_repeats",
+    "barrier",
+    "build_checkpoint",
+    "capture_rng_state",
+    "config_for_repeat",
+    "config_from_checkpoint",
+    "destroy",
+    "distributed_available",
+    "evaluate_partition",
+    "fit_once",
+    "initialise",
+    "is_main_process",
+    "load_checkpoint",
+    "metrics_from_checkpoint",
+    "rank",
+    "repeat_seeds",
+    "restore_into",
+    "restore_rng_state",
+    "run_repeats",
+    "save_checkpoint",
+    "seed_from_checkpoint",
+    "tensor_payload_digest",
+    "world_size",
+    "wrap_distributed",
+]

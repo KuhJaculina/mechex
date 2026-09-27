@@ -1,0 +1,4 @@
+# The stratified evaluation at the external site.
+# Ref: Sec. 2.4 and Table 3.
+protocol:
+  fdr: 0.05

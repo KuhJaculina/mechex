@@ -1,0 +1,68 @@
+Third-party notices
+===================
+
+This distribution contains only first-party source code. It bundles no third-party data,
+no third-party model weights and no redistributed molecule structures. The notices below
+cover the libraries the code links against and the external resources it can read.
+
+Runtime libraries
+-----------------
+
+PyTorch
+  Version: 2.2 or later
+  Licence: BSD-3-Clause
+  Source:  https://pytorch.org/
+  Use:     tensors, autograd, the neural-network layers of both branches and the trainer.
+
+NumPy
+  Version: 1.26 or later
+  Licence: BSD-3-Clause
+  Source:  https://numpy.org/
+  Use:     array arithmetic throughout the data, statistics and evaluation layers.
+
+SciPy
+  Version: 1.11 or later
+  Licence: BSD-3-Clause
+  Source:  https://scipy.org/
+  Use:     normal and binomial tails, Gauss-Hermite quadrature nodes, BFGS optimisation.
+
+scikit-learn
+  Version: 1.3 or later
+  Licence: BSD-3-Clause
+  Source:  https://scikit-learn.org/
+  Use:     the histogram gradient-boosting comparator; the verification pass also uses its
+           AUROC and Cohen's kappa implementations as independent references.
+
+PyYAML
+  Version: 6.0 or later
+  Licence: MIT
+  Source:  https://pyyaml.org/
+  Use:     configuration loading.
+
+OmegaConf
+  Version: 2.3 or later
+  Licence: BSD-3-Clause
+  Source:  https://github.com/omry/omegaconf
+  Use:     configuration loading with dotted overrides.
+
+Development-only libraries
+--------------------------
+
+pytest, pytest-cov (MIT licence; https://pytest.org/), ruff (MIT; https://docs.astral.sh/ruff/),
+Black (MIT; https://black.readthedocs.io/), isort (MIT; https://pycqa.github.io/isort/),
+mypy (MIT; https://mypy-lang.org/). These run the test and lint gates and are not imported
+by the library.
+
+External resources
+------------------
+
+Drug Repurposing Hub, ChEMBL and PubChem are referenced by the manuscript as auxiliary
+public resources. They are read at their source and are not redistributed here. Their
+licences and access conditions are recorded in dataset_urls.txt.
+
+Clinical material
+-----------------
+
+The primary cohort, the archived assay material and the human reader assessments are
+clinical and human data that this distribution does not contain and does not describe at
+record level. No personally identifiable information was processed at any point.

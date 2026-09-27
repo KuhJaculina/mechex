@@ -1,0 +1,885 @@
+{
+  "release": "mechex-1.0.0",
+  "version": "1.0.0",
+  "root": "mechex",
+  "file_count": 171,
+  "total_bytes": 895922,
+  "manifest_digest": "dfab808fa758750761b29644a73827dbbf8e43dac79020be0068eb191557b1da",
+  "verified": false,
+  "claims": {
+    "claim_count": 68,
+    "anchor_count": 65,
+    "code_reference_count": 108,
+    "kinds": {
+      "method": 42,
+      "design": 0,
+      "protocol": 0,
+      "reported_value": 26,
+      "tooling": 0
+    },
+    "deviation_count": 18
+  },
+  "notes": {
+    "overall_status": "PARTIALLY_VERIFIED",
+    "code_status": "PARTIALLY_VERIFIED",
+    "checks": 111,
+    "manuscript_checks": 20
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "ca37a8f8c13e6ecddeee96d19a40a7d6b88b870075aedae107cf4be343891c56",
+      "bytes": 399
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "sha256": "1d6e4b5feae8b2341177b418e4c264df5021486ec723a9f7a05228881ed16965",
+      "bytes": 885
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "7f5c3c0fcb14cc8d4f311bfe4469040a2d68519a86eeb6196ff893b608e844e2",
+      "bytes": 1031
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "ffce8c60a88d07ff2f58e7b6a163ea25f3ccae17d7dba2778f9bf22b9c0dbbb3",
+      "bytes": 1075
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "3ba94d199b467ba51acf28258207cb188820803eab4c2448d3e30ec5a86a8cb6",
+      "bytes": 2322
+    },
+    {
+      "path": "README.md",
+      "sha256": "c62ea6ca6d9f0810439947dd5ca8b62de33382fe1ad4ab3a6f919435580ff748",
+      "bytes": 11799
+    },
+    {
+      "path": "claim_to_code.json",
+      "sha256": "d204c26e97fcfaf343e8cd54f708c7549df0b9d5f095f374568bbee294a22a57",
+      "bytes": 59867
+    },
+    {
+      "path": "configs/ablation/default.yaml",
+      "sha256": "bc0bd3937fdf1b308fe46814d450958e8bbfa7ff0a8bd910f3e4db2094353108",
+      "bytes": 298
+    },
+    {
+      "path": "configs/basis/molecular_basis.yaml",
+      "sha256": "7d0f8058172d7bfde040b2bdb4fc82ef5dd6047d1c94a74daa20231777dda53e",
+      "bytes": 224
+    },
+    {
+      "path": "configs/cohort/fixture.yaml",
+      "sha256": "ba5bec74a612e62bdac651ccfe51a68bd56dcb4ddd2ff13d0087e4e9794fbf7c",
+      "bytes": 318
+    },
+    {
+      "path": "configs/conservation/mass_conservation.yaml",
+      "sha256": "573da89e6b8d3c0e5fc6802331f62c458c95d2668da48a1888b8ae51fa450fc9",
+      "bytes": 283
+    },
+    {
+      "path": "configs/coupling/bidirectional_cross_attention.yaml",
+      "sha256": "20b6df19ccddb4d333153183dbf12efe1bf49b02e236c04d4e70fccbd3192b0b",
+      "bytes": 220
+    },
+    {
+      "path": "configs/decision/adequacy_abstention.yaml",
+      "sha256": "c5537dde54147d5e497ef2bf98de56518c2d08f09149627ec4315254a108352c",
+      "bytes": 335
+    },
+    {
+      "path": "configs/objective/composite.yaml",
+      "sha256": "d2899b0adafa995dbaab67c9dbccce08e8ecc77062a39c028d96cd1ae2fa04a5",
+      "bytes": 268
+    },
+    {
+      "path": "configs/optimiser/adamw_cosine.yaml",
+      "sha256": "cc83a837a6305367dafb2b14caa3f55f9f932ed4e2465598fb439d70fd02e7f1",
+      "bytes": 507
+    },
+    {
+      "path": "configs/protocol/primary_cohort.yaml",
+      "sha256": "450aa280462d6b33e3b08d16ec8031bb0d4aa54da6396205efb1b96bcaa47063",
+      "bytes": 447
+    },
+    {
+      "path": "configs/smoke.yaml",
+      "sha256": "705234a253d130ae414cfa758164cfbb29f3e7e12caa6a41ee097dafead351d9",
+      "bytes": 522
+    },
+    {
+      "path": "configs/study/concatenation_instead_of_cross_attention.yaml",
+      "sha256": "1d34e108eb70ec1fac722088f906fef2b5cb3df33cc028a801fba52ca229db63",
+      "bytes": 166
+    },
+    {
+      "path": "configs/study/constraint_weight_four.yaml",
+      "sha256": "f12d30e1681181ddfd36905590e33067c5e891719f0b17a55e40656c74c6578b",
+      "bytes": 128
+    },
+    {
+      "path": "configs/study/constraint_weight_quarter.yaml",
+      "sha256": "22023d8e1c4998e99f577a14e52d4b561a87b326a801d96beca14b171231ed83",
+      "bytes": 134
+    },
+    {
+      "path": "configs/study/deep_ensemble_uncertainty.yaml",
+      "sha256": "f581fbbbde563f62f1e20005a7795e7f8f772f69e48b01d9abe64f8727f2cf6f",
+      "bytes": 176
+    },
+    {
+      "path": "configs/study/distribution_shifts.yaml",
+      "sha256": "e4e475737ade587110a3f73bd95dbc2e332015ac03830253eeaf6b9e15fcd098",
+      "bytes": 106
+    },
+    {
+      "path": "configs/study/exposure_guided_ranking.yaml",
+      "sha256": "c9e2ae4120a7d4f0967b3d0ba8873b3be3730078ecfd2a5f27c83416859e8ff7",
+      "bytes": 111
+    },
+    {
+      "path": "configs/study/external_site_evaluation.yaml",
+      "sha256": "9d87e15e318120987df2e62b5ae8f39f6684a3569f8303e94e0e6bc98f8e9bd4",
+      "bytes": 203
+    },
+    {
+      "path": "configs/study/full_finetuning.yaml",
+      "sha256": "7986df86baa9a0c85e9780ff771ae8ca7c6b647750e43c314a597fe1e5cc199d",
+      "bytes": 185
+    },
+    {
+      "path": "configs/study/in_vitro_efflux_arm.yaml",
+      "sha256": "769be2e0d11705e7bb75572b3ccdf7a397d31de0207fa539d7fb3c964ae8e88a",
+      "bytes": 114
+    },
+    {
+      "path": "configs/study/main.yaml",
+      "sha256": "ae9c986cf2f51394dd629991cd7ab4c2229817527634cdd27365002087c13860",
+      "bytes": 364
+    },
+    {
+      "path": "configs/study/molecular_encoder_without_adaptation.yaml",
+      "sha256": "393a1565a628348080bf7a083bf800c2e55d48cc916f59d0837417582bc1039f",
+      "bytes": 240
+    },
+    {
+      "path": "configs/study/no_conservation_constraint.yaml",
+      "sha256": "d6d4d9245935e729a04918d1e65f5157dd52b9074073f640f7e138577ba10550",
+      "bytes": 167
+    },
+    {
+      "path": "configs/study/no_decision_layer.yaml",
+      "sha256": "3374ce54f70c9fd5e50b8d3d2cc3120261317447c6467b3eb9f2c297d863706c",
+      "bytes": 207
+    },
+    {
+      "path": "configs/study/no_imaging_branch.yaml",
+      "sha256": "89cf2c82e03519afd487e489f437778c8b57da83d7a50d67dfe6f3acbc087e73",
+      "bytes": 110
+    },
+    {
+      "path": "configs/study/no_molecular_branch.yaml",
+      "sha256": "17640be888a73ee07e87c9b26da146aff8780c54c0a316ad329d2f204531ae80",
+      "bytes": 115
+    },
+    {
+      "path": "configs/study/no_uncertainty_head.yaml",
+      "sha256": "79058f0a3bf077af190487e5beb86331d5c63124f386bb0b4a53957e48da3556",
+      "bytes": 156
+    },
+    {
+      "path": "configs/study/randomly_initialised_encoders.yaml",
+      "sha256": "b939399439af909b70c07cbe42862a251d4101843bf734bba5587ee9f168b6bf",
+      "bytes": 169
+    },
+    {
+      "path": "configs/study/reader_study.yaml",
+      "sha256": "95266a1c2b860c677aa15418ae5f75f03abd568e61079f7902dc621dbd93ef4b",
+      "bytes": 143
+    },
+    {
+      "path": "configs/study/severity_and_class_strata.yaml",
+      "sha256": "1567b7253704d153d86e6072b77c2ccf01a0aa0c9cddc13678d2ceef4582555d",
+      "bytes": 101
+    },
+    {
+      "path": "configs/study/silent_mode_deployment.yaml",
+      "sha256": "404c271e5362171f0e9f20faa8696c75cb7c980f9f439a094737e193f846d17c",
+      "bytes": 125
+    },
+    {
+      "path": "configs/study/single_branch_then_stack.yaml",
+      "sha256": "3a764a6b4d43d07e022d9b197a567963dde0889a9a47e882e45a8f6f78cc5314",
+      "bytes": 156
+    },
+    {
+      "path": "configs/uncertainty/evidential_isotonic.yaml",
+      "sha256": "83da8c21da8fd738ca2af423d5424f2fe80d5cffa71a8ba18b72450811a11fb0",
+      "bytes": 206
+    },
+    {
+      "path": "configs/vascular/cta_vascular.yaml",
+      "sha256": "7a795cf47037d038724ad96e7784f4cfbde8552bd200e906e83ec0fbb85e1913",
+      "bytes": 370
+    },
+    {
+      "path": "dataset_urls.txt",
+      "sha256": "72af0a618e515fca7ca2d961cb8475728a137d0a12961f872dfa3b16e4ba06db",
+      "bytes": 2063
+    },
+    {
+      "path": "environment.yml",
+      "sha256": "862fd1d2dcfca337c51b61b077a455ab0adc4abfafea211f65ed7c2b50f1f5be",
+      "bytes": 210
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "b2d82807df6aad5befde68e111ea00f6fa6525e366e0d333c4fa0c0a74703a98",
+      "bytes": 1743
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "6a4a4d6b3613ae2c4c151f860e549d7d32a89e9535d3fe7eb2dc3577ef3b48fb",
+      "bytes": 80
+    },
+    {
+      "path": "scripts/launch_distributed.sh",
+      "sha256": "a1ed18de3e97bdab31f3c9e4350df58dc233963fd27e3792c227a7043ae6de10",
+      "bytes": 679
+    },
+    {
+      "path": "scripts/launch_eval.sh",
+      "sha256": "433d2a289926cf7bf0ff639a842c6d6133bb1513fee30c04c62ef05f54a71a94",
+      "bytes": 494
+    },
+    {
+      "path": "scripts/launch_train.sh",
+      "sha256": "df762d49aaa2a4a7253636c4bb29309cf14841db0a1a512d99e4594ba9d39399",
+      "bytes": 379
+    },
+    {
+      "path": "scripts/run_audit.sh",
+      "sha256": "3309473fc52720d8675eb106ce9e53f738c7ea2d3ee8272d90f5d9d73ebefb0f",
+      "bytes": 443
+    },
+    {
+      "path": "scripts/run_gates.sh",
+      "sha256": "f624196720845f725cbd5adddca96068de8555c2ab86cade242f7bfddefa7821",
+      "bytes": 351
+    },
+    {
+      "path": "scripts/stage_cohort.sh",
+      "sha256": "020cf21df028c6e8f77c760a1ee0ed15fc029de66bfb38a96ea51d78f3b97cec",
+      "bytes": 777
+    },
+    {
+      "path": "src/mechex/__init__.py",
+      "sha256": "5bef71139c1861a4169c6fbf8bbf10f42cc42e329f79e3e40e00cef060e3bad2",
+      "bytes": 203
+    },
+    {
+      "path": "src/mechex/assay/__init__.py",
+      "sha256": "f003cc917b4492cb34e7171e393e81efb7299af9d920348ee20fcb2d6b93bb7b",
+      "bytes": 747
+    },
+    {
+      "path": "src/mechex/assay/accumulation.py",
+      "sha256": "9a5a62d41c783ab984d80a4a29dc8421a6e4fdeea8e6ae6bfb07542f1d8d3422",
+      "bytes": 8328
+    },
+    {
+      "path": "src/mechex/assess/__init__.py",
+      "sha256": "bd06c769c78a17c57b235773e17aae59f95e2b184a555a9b8138734e2d34b552",
+      "bytes": 3195
+    },
+    {
+      "path": "src/mechex/assess/abstain.py",
+      "sha256": "6df4ce85f6aebf184c95042c9733de7914090f9a045b399b97561dd2d6c4f634",
+      "bytes": 2223
+    },
+    {
+      "path": "src/mechex/assess/external.py",
+      "sha256": "e9a6ffc9369c60fa1434193e8c71ea5a72c259e702838847252ac96d1049c585",
+      "bytes": 8492
+    },
+    {
+      "path": "src/mechex/assess/human_model.py",
+      "sha256": "a9804e7aa15b78521b0ddeb806efb959cc976e9d007f96e6618a50bcd28535b7",
+      "bytes": 9092
+    },
+    {
+      "path": "src/mechex/assess/ranking.py",
+      "sha256": "4b51894a5c9343bd44edee519dee60e488cc47a2fd422ddf35f3b1e10ec162f9",
+      "bytes": 6251
+    },
+    {
+      "path": "src/mechex/assess/shift.py",
+      "sha256": "12fc8905a65691ca6f0ea3da3fad963296cbe2c625f5de3dfbd8e5543dcace6a",
+      "bytes": 6861
+    },
+    {
+      "path": "src/mechex/assess/silent_mode.py",
+      "sha256": "6cfeb9885e64337270e065c3bf7d09553eb7ac8fe3415cabb476b10d562f394a",
+      "bytes": 7594
+    },
+    {
+      "path": "src/mechex/assess/strata.py",
+      "sha256": "b069e368c73fd91b2b5d6eaddd0964e000047d23ecda572d2b81174f1e6d9acf",
+      "bytes": 7355
+    },
+    {
+      "path": "src/mechex/basis/__init__.py",
+      "sha256": "9fd2fb9b67d9094dfa40b45c870f1b9616da79a1b5f07ebfb7e6c3abee2edec2",
+      "bytes": 754
+    },
+    {
+      "path": "src/mechex/basis/chemistry.py",
+      "sha256": "4ec8bceae49a2b70156faa54a39bd866a19d182024f56c205a50aa05c10e8dca",
+      "bytes": 8722
+    },
+    {
+      "path": "src/mechex/basis/graph.py",
+      "sha256": "20fc57102f3162d8dae2c3e5dc3672095b547b8b72538b605e59a2ef92aaa24c",
+      "bytes": 3153
+    },
+    {
+      "path": "src/mechex/basis/projection.py",
+      "sha256": "86ac92eb327c8bd6b7701a2eb33a7c91c1a7781ffadd420062eb0700c846e798",
+      "bytes": 4936
+    },
+    {
+      "path": "src/mechex/basis/transformer.py",
+      "sha256": "e02fe30707954bb889a373f6d81feb461e0f38c1ea36c1ae6f93a0b21399a1c3",
+      "bytes": 9446
+    },
+    {
+      "path": "src/mechex/bench/__init__.py",
+      "sha256": "19e3537b51e1e93e3bc48c00abe7070312edb998c55f774dbfedce6838230a92",
+      "bytes": 2449
+    },
+    {
+      "path": "src/mechex/bench/features.py",
+      "sha256": "6ba96e5976cc326199cdbf9501537b78e29cc9898743fc22a4a089fb71e19767",
+      "bytes": 4585
+    },
+    {
+      "path": "src/mechex/bench/fusion.py",
+      "sha256": "3f3c14a20fcdc6de986218eb34a32c0e378537d6cb362cb96efb0083e53fd73a",
+      "bytes": 6902
+    },
+    {
+      "path": "src/mechex/bench/mechanistic.py",
+      "sha256": "da426b5a81b9d6bcc4f46ef7e6fd0b67eb9658072c4a157b0af129d47eb472c8",
+      "bytes": 8956
+    },
+    {
+      "path": "src/mechex/bench/radiomics.py",
+      "sha256": "d1dfe7e278e170401e1c79bcc6aeefb1ba6e8c396a06cb7131345ca64ef90385",
+      "bytes": 4139
+    },
+    {
+      "path": "src/mechex/bench/registry.py",
+      "sha256": "a8c7d836b02dae80fcc87803af699cea28367d885af72e5501c4cbeadba685a3",
+      "bytes": 4536
+    },
+    {
+      "path": "src/mechex/bench/runner.py",
+      "sha256": "f8728d99d0f112bb5efa90d8575785d334f850dfc14193731398f2b213fecaca",
+      "bytes": 9252
+    },
+    {
+      "path": "src/mechex/bench/single_branch.py",
+      "sha256": "5f05c4af88e10f15355259cc416e3ff1152c04d854b805cd3941da57ef90a5e0",
+      "bytes": 2839
+    },
+    {
+      "path": "src/mechex/cohort/__init__.py",
+      "sha256": "2408682eb5503e5cc65bfb934f2cdad1d0ee6de04872c84df7893685643df200",
+      "bytes": 2769
+    },
+    {
+      "path": "src/mechex/cohort/cohort.py",
+      "sha256": "c2c6b9e34f8766a0d9f268a6953810574a792d2a7e155c1c4c00b5d2890cf3d6",
+      "bytes": 5722
+    },
+    {
+      "path": "src/mechex/cohort/construction.py",
+      "sha256": "b6ea25d05f31ecac2886df029072794ec33901e730a52792b1330986ef3327e7",
+      "bytes": 6834
+    },
+    {
+      "path": "src/mechex/cohort/fixture.py",
+      "sha256": "313f5cbcdc453c2f46eb46d703807130389dc08ea337daa2c4f3a229a60ce894",
+      "bytes": 13493
+    },
+    {
+      "path": "src/mechex/cohort/linkage.py",
+      "sha256": "9145489fb0bf33460f3989eb437ae33937ace8d1f1e1434cce07adc5e0cfeafe",
+      "bytes": 7035
+    },
+    {
+      "path": "src/mechex/cohort/partition.py",
+      "sha256": "bd814cd6623b5f767ac8fce8746a4fed2150c63ef1fb802f2e197fc84e85922f",
+      "bytes": 8211
+    },
+    {
+      "path": "src/mechex/cohort/records.py",
+      "sha256": "b905db6b2a4016f2d36e62b7dc77b0231b5e82084ef368aafde8475eee9645a1",
+      "bytes": 5659
+    },
+    {
+      "path": "src/mechex/cohort/reference.py",
+      "sha256": "de273d69b8c9bf438c9fbe2ee1b2969f7fca679406d31bfe84909fd3e36dbf3b",
+      "bytes": 5802
+    },
+    {
+      "path": "src/mechex/cohort/transforms.py",
+      "sha256": "9e1212821bbe7645af77250812f1d8572d497316d4c8398577c38e1bdf64b2db",
+      "bytes": 6817
+    },
+    {
+      "path": "src/mechex/compress/__init__.py",
+      "sha256": "02682fecc0a206f6a744e8a9546fb74c03c9dac3071ceca4cadb9eaa228b7c90",
+      "bytes": 453
+    },
+    {
+      "path": "src/mechex/compress/int8.py",
+      "sha256": "37b4d9fb2abb812e7aedde173af0f7eba23e191800973b44bfa03b5afb8f8fb1",
+      "bytes": 4760
+    },
+    {
+      "path": "src/mechex/conservation/__init__.py",
+      "sha256": "df22f89c6a599f98fb0d69c3fa59e99c219a0d48219b9d74eef9562ca1f4e925",
+      "bytes": 1042
+    },
+    {
+      "path": "src/mechex/conservation/inconsistency.py",
+      "sha256": "3eaa5c9c1aea887f847699a759162dacc48978830d38ff35f30968e318477d94",
+      "bytes": 2945
+    },
+    {
+      "path": "src/mechex/conservation/law.py",
+      "sha256": "356fe522e0814a5d987e02107a4c1472448dd44620cdd1c590dbdeaac8587fce",
+      "bytes": 1463
+    },
+    {
+      "path": "src/mechex/conservation/penalty.py",
+      "sha256": "80145bd26624152b845090912245557438ed910124933301278071893793cbaa",
+      "bytes": 1221
+    },
+    {
+      "path": "src/mechex/conservation/residual.py",
+      "sha256": "83ac8de14429467010fd9e23d533be9116fe9a85775f3858e95fcf65c28c49b7",
+      "bytes": 3252
+    },
+    {
+      "path": "src/mechex/console/__init__.py",
+      "sha256": "b9a09e4e04ccca028ecf3b6beaaf4690c93eafa90116714ed296461c674fcfec",
+      "bytes": 287
+    },
+    {
+      "path": "src/mechex/console/audit.py",
+      "sha256": "7cb477dac7533ac3ff8628ac608db5ba04e5eae222abaf7baa8d81289a1f73bd",
+      "bytes": 118904
+    },
+    {
+      "path": "src/mechex/console/evaluate.py",
+      "sha256": "6e52b2ab51e3f7497f291702c5c0e4abb15fcdb75c08861df04d115b28cf691d",
+      "bytes": 4988
+    },
+    {
+      "path": "src/mechex/console/train.py",
+      "sha256": "20964678c4642b70004c043dfd34f1e5998058a41803fb21ebf88f0fcae2cbeb",
+      "bytes": 4101
+    },
+    {
+      "path": "src/mechex/coupling/__init__.py",
+      "sha256": "0aa8cd405a6106f6caa1eeed3d8aa174cd508d1631428c1755ab5ea9c78fc25b",
+      "bytes": 713
+    },
+    {
+      "path": "src/mechex/coupling/additive.py",
+      "sha256": "7778f1ba614a448947a1678b608add2998e9aee7056ddbbf34e02541b8f9ffd8",
+      "bytes": 6237
+    },
+    {
+      "path": "src/mechex/coupling/bidirectional.py",
+      "sha256": "a999d76d3aea40710bc73bf810593faddef0fb5ccdb5a995b7b6ad1375db1a43",
+      "bytes": 3227
+    },
+    {
+      "path": "src/mechex/decision/__init__.py",
+      "sha256": "e867b5570a22c56e69df6a47f0322cd4a4f7a6e2cb66b749fea4671bfc106928",
+      "bytes": 838
+    },
+    {
+      "path": "src/mechex/decision/abstention.py",
+      "sha256": "66a1bd6beae9647378b11a885e50dbc2569a89281e97aae0d3cf65032482846f",
+      "bytes": 5434
+    },
+    {
+      "path": "src/mechex/decision/threshold.py",
+      "sha256": "b51498b7fa45e2bd75c4a2a95fb8ee4a7c48fc645da01c93ea97e750b487cc0a",
+      "bytes": 4179
+    },
+    {
+      "path": "src/mechex/estimator.py",
+      "sha256": "e81711588f6aa78524ab68b2ad8976f25828874094e1d286af7d1b4df9563951",
+      "bytes": 10318
+    },
+    {
+      "path": "src/mechex/fit/__init__.py",
+      "sha256": "5b03315d097054fa00332b0db3a2efec784970104a45d64d5b129324b214f51e",
+      "bytes": 1485
+    },
+    {
+      "path": "src/mechex/fit/checkpoint.py",
+      "sha256": "0cf1f8959cbc90c5b2e0754b2b6923ced89102fb4262ebda039438e95e68d02e",
+      "bytes": 5501
+    },
+    {
+      "path": "src/mechex/fit/distributed.py",
+      "sha256": "7ac611667c1825de44a458052c0fb9eb194bddfa32cb91275b6ccef74fa48659",
+      "bytes": 2391
+    },
+    {
+      "path": "src/mechex/fit/engine.py",
+      "sha256": "550a78f852d1536ecc443d867d5e48e5715c7bed9a9de01e2f6e9a92b1d64f8f",
+      "bytes": 11087
+    },
+    {
+      "path": "src/mechex/fit/repeats.py",
+      "sha256": "c396eca812a95d82701208bc7485a629b7078d22ffadc1c3f6a510b2ec7f3f21",
+      "bytes": 2974
+    },
+    {
+      "path": "src/mechex/guard/__init__.py",
+      "sha256": "3ea5c594cb813a63f747d6fd399680b0d76fbaa7fca62cf9eb01211d485cf35b",
+      "bytes": 1578
+    },
+    {
+      "path": "src/mechex/guard/drift.py",
+      "sha256": "4dbc4db6ca55062ce9981b9f966ce7e49df0854f8a63873020ada066728367be",
+      "bytes": 4698
+    },
+    {
+      "path": "src/mechex/guard/failure_modes.py",
+      "sha256": "1cb58af2a4217f75bb2a2f2269a2b3435a50314f25eb2030d31a189341401c27",
+      "bytes": 5534
+    },
+    {
+      "path": "src/mechex/guard/operating_point.py",
+      "sha256": "1595cc533ebbd55a7aad6c31ab361c53120be0543e3c7ef9a5ee9be0a6e9d1e9",
+      "bytes": 4395
+    },
+    {
+      "path": "src/mechex/guard/perturbation.py",
+      "sha256": "c4ed0ddf9f71484fad523cdf6912ebecfa3b69ac0871c57e7aaa941b7fc510ca",
+      "bytes": 5033
+    },
+    {
+      "path": "src/mechex/objective/__init__.py",
+      "sha256": "9a1df14d685a594e1ce6e059eb0a8f94b67867b01a643719f21517ee7ebea90c",
+      "bytes": 838
+    },
+    {
+      "path": "src/mechex/objective/calibration.py",
+      "sha256": "19c2bbb358c0302826e0eb4466b02c8d8d86d835ce9102db0ee2336a0e0f4efb",
+      "bytes": 2370
+    },
+    {
+      "path": "src/mechex/objective/composite.py",
+      "sha256": "ced918253bc07ed9d849f957b60c0a4278552f28523eaa9a705f638d8952876a",
+      "bytes": 4202
+    },
+    {
+      "path": "src/mechex/objective/concordance.py",
+      "sha256": "e7aa8ed8fc25d64c65abef0d785c1abd0fdabba5ec580f66a44d28eeb7f09ada",
+      "bytes": 2106
+    },
+    {
+      "path": "src/mechex/optimise/__init__.py",
+      "sha256": "b24337180753fa94dd4cc376ff95c2ac95bda825d80cde6ed97d894c52eee379",
+      "bytes": 809
+    },
+    {
+      "path": "src/mechex/optimise/optimiser.py",
+      "sha256": "397f9245bdc0170f9b5c2501e3f275ecfcd04a037b59c4e288e68d051e51cb48",
+      "bytes": 3657
+    },
+    {
+      "path": "src/mechex/optimise/schedule.py",
+      "sha256": "c5f99a52e74c5b505664a5351b2367ad76b6e5d46ffcd560513ad3fb02667cb1",
+      "bytes": 3850
+    },
+    {
+      "path": "src/mechex/provenance/__init__.py",
+      "sha256": "321480c8882da0c4d9ce7cf00ec09884205d1d693c1ec37c86ea1efb592b2284",
+      "bytes": 2265
+    },
+    {
+      "path": "src/mechex/provenance/arithmetic.py",
+      "sha256": "9b89063156239affae528caea8a6f30ffea419b556960cf3f4ca9874ed7eba9e",
+      "bytes": 22705
+    },
+    {
+      "path": "src/mechex/provenance/artefacts.py",
+      "sha256": "e4f53528fbe1ce34b31d33dd62c97f2a6cfb9a41720f2eb7a137c273bccaf3b0",
+      "bytes": 10902
+    },
+    {
+      "path": "src/mechex/provenance/claims.py",
+      "sha256": "d9a9aeac2b9261305d2250d0e88b99690697649238710fb8a6b8b90877a9723d",
+      "bytes": 38242
+    },
+    {
+      "path": "src/mechex/provenance/manifest.py",
+      "sha256": "75dff96c8a5328ce71e6b9631fd6f7f17df800e4584a214a68d6a395b9a86149",
+      "bytes": 3720
+    },
+    {
+      "path": "src/mechex/provenance/tables.py",
+      "sha256": "7aac3c17fc54fcd6eba1521113a6e69d20b63b26f87228ae51d28de1017ebffc",
+      "bytes": 16526
+    },
+    {
+      "path": "src/mechex/quantify/__init__.py",
+      "sha256": "b136528adcbfe3094cee42589fca9d53f06d9c305168f7dab6fd4680af5685ef",
+      "bytes": 3321
+    },
+    {
+      "path": "src/mechex/quantify/agreement.py",
+      "sha256": "07d5a7d958cf7fb21c8b89530a08b304bb3eae675a1e164dff442e63c0696c29",
+      "bytes": 4134
+    },
+    {
+      "path": "src/mechex/quantify/bootstrap.py",
+      "sha256": "39a6808f4cf9984db10b0a69af7e45dca8adeabcfbec629baf30e81bd9736183",
+      "bytes": 5135
+    },
+    {
+      "path": "src/mechex/quantify/calibration.py",
+      "sha256": "39465a398332f0b04e311fe786693ea629405e41b4a3de13f65888f8f3a7071f",
+      "bytes": 6092
+    },
+    {
+      "path": "src/mechex/quantify/concordance.py",
+      "sha256": "bad0d768e5361ca2a45f0ecba7e67e292c29f2ac5be8a6b2b127e9f4eb14cc4d",
+      "bytes": 3502
+    },
+    {
+      "path": "src/mechex/quantify/correlation.py",
+      "sha256": "6dd037abbf6f8a99c7806043b07cc2de20c595009cde68fc93df775d9d4e6781",
+      "bytes": 4538
+    },
+    {
+      "path": "src/mechex/quantify/delong.py",
+      "sha256": "b8635274d90d8e08b79bd8a29ebf297136f9c4c4b7c6db863d44deee225eef94",
+      "bytes": 4014
+    },
+    {
+      "path": "src/mechex/quantify/fold.py",
+      "sha256": "9ca4fa4d1898017faf88184e0222dd7369a8884d6f246921b27a83d313ac3c0c",
+      "bytes": 2361
+    },
+    {
+      "path": "src/mechex/quantify/mixed.py",
+      "sha256": "a19d1a671ab792c89f282e481f7b7ea5f2684578fb6a07490aac20ba68d0f379",
+      "bytes": 7470
+    },
+    {
+      "path": "src/mechex/quantify/multiplicity.py",
+      "sha256": "f9e0a0761991993beb2ae96fd2df8c674f3af0d73b9a1323a80b8cdefc414e99",
+      "bytes": 2621
+    },
+    {
+      "path": "src/mechex/quantify/netbenefit.py",
+      "sha256": "78ac595bd17ba5957c452a4f2e864d9cd8183cb99c17b82e7e19b7eaa47194bb",
+      "bytes": 3442
+    },
+    {
+      "path": "src/mechex/quantify/roc.py",
+      "sha256": "f3ef2a3df14c6a98ab663b4d6c1fe62cefe7f5152143a64011c4e3f7b99fe8bd",
+      "bytes": 4256
+    },
+    {
+      "path": "src/mechex/quantify/shift.py",
+      "sha256": "f0f1028e2289770fd76949ec4705ca68338695832c4b3f3a828b1b088cf7aba8",
+      "bytes": 2556
+    },
+    {
+      "path": "src/mechex/seeding.py",
+      "sha256": "607c017b16ac5f8d74d919812719f92f5d1568fb10c4fbd11f0da39fc18c88ad",
+      "bytes": 2011
+    },
+    {
+      "path": "src/mechex/settings.py",
+      "sha256": "b954d3facd7dbcd8a863d376d65da278eafede3417180830ec5852d43e5709a5",
+      "bytes": 10134
+    },
+    {
+      "path": "src/mechex/uncertainty/__init__.py",
+      "sha256": "39e665b523d93218b3f2f3fbea431f5d8ab3e3160d3b18c5962e7d6e0e682c3a",
+      "bytes": 874
+    },
+    {
+      "path": "src/mechex/uncertainty/ensemble.py",
+      "sha256": "063c28bac910f88afc3575d663753e9115e368b7dee045bdfcda57942348087c",
+      "bytes": 1828
+    },
+    {
+      "path": "src/mechex/uncertainty/evidential.py",
+      "sha256": "b4bca990508aedc272798778c97465d5006c2ab970efc55c009518f1b475a288",
+      "bytes": 4831
+    },
+    {
+      "path": "src/mechex/uncertainty/heads.py",
+      "sha256": "44b0c48efedbb62a823db0ea043070f6714cad4b69754ea576e8cf1de3bdda39",
+      "bytes": 3628
+    },
+    {
+      "path": "src/mechex/uncertainty/isotonic.py",
+      "sha256": "dbdb6a7b702817dea44875b975276185b5fc4b0264f3ad94990b5d14ab191d3f",
+      "bytes": 6110
+    },
+    {
+      "path": "src/mechex/utils/__init__.py",
+      "sha256": "a2f53a240948698f464adf6a5a4fe224b50dfd879c8e1e251f2d7b69ad84ed4a",
+      "bytes": 55
+    },
+    {
+      "path": "src/mechex/utils/coerce.py",
+      "sha256": "4cd324161dc7683962302039827ec8db8abaff55b56994a96c56f3eab1d2c971",
+      "bytes": 1670
+    },
+    {
+      "path": "src/mechex/utils/io.py",
+      "sha256": "03299ccd50402d3aa0fd2869e93d8417b290d5c3ddc304d29b170df5ae154ef0",
+      "bytes": 3739
+    },
+    {
+      "path": "src/mechex/utils/logging.py",
+      "sha256": "3c6226c21e412d1f97ecb736a461fb16ecfc913611b775cc8affd268d1304169",
+      "bytes": 1346
+    },
+    {
+      "path": "src/mechex/utils/tensors.py",
+      "sha256": "7257f2aafe3030852951d7f8ac66638d7d74d58e0e7e04c756489e76a3954f81",
+      "bytes": 3856
+    },
+    {
+      "path": "src/mechex/vascular/__init__.py",
+      "sha256": "a1b7a99972e301a0ca4cec89c9ad28f4d43e89dd48956f3c616391b7fbc40ce5",
+      "bytes": 897
+    },
+    {
+      "path": "src/mechex/vascular/encoder.py",
+      "sha256": "82816bcd156b1c7efe98b4ac4e36b59ca57ee27be3a54c4fbf519a3229d081ef",
+      "bytes": 4631
+    },
+    {
+      "path": "src/mechex/vascular/perfusion.py",
+      "sha256": "96ca35a38d64fcabdb9236b964d76c710db6ce3e3859cf1c52535df00ed746d3",
+      "bytes": 3510
+    },
+    {
+      "path": "src/mechex/vascular/projection.py",
+      "sha256": "e043fcfdaef6ac47d618c09de80deed773acd63dca2dd7d161ab1f8bf250ce11",
+      "bytes": 1717
+    },
+    {
+      "path": "src/mechex/vascular/volume.py",
+      "sha256": "f02c4a79f479bd09498942bf7e64045a9bd839271e81bb7b9b7afbbcf0d8f338",
+      "bytes": 3953
+    },
+    {
+      "path": "src/mechex/version.py",
+      "sha256": "5fb36d788c2d744486ed4515f2d529df194c106dbd958e6c34e535d2508f699d",
+      "bytes": 478
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "fe1c44303fa103cba58fde2f9aea7b6effeaf5d22f0d1751f07330f98a1a1cbb",
+      "bytes": 3763
+    },
+    {
+      "path": "tests/test_basis.py",
+      "sha256": "0e1533d9201e927e6b7be79d2947050618213c42472f13a13196aeaf36b8d74b",
+      "bytes": 5772
+    },
+    {
+      "path": "tests/test_cohort.py",
+      "sha256": "7e34dca5426924e877a23ab896cb194ff009761c2337db1bf2704cace11c2a35",
+      "bytes": 8749
+    },
+    {
+      "path": "tests/test_components.py",
+      "sha256": "f405dbf1e310c340210684bc98b1d26e269487ca393fc8d0996b4957315b1853",
+      "bytes": 14948
+    },
+    {
+      "path": "tests/test_coupling_conservation.py",
+      "sha256": "7a5a4d04eb3a6eccc898a0f2b2447ad2bbb065ba94e5e71db193550404171ec9",
+      "bytes": 6856
+    },
+    {
+      "path": "tests/test_estimator.py",
+      "sha256": "14936e5ef65494e6b666ad6de6039fd0a5b698ee084295a0cccfc0e7d82572e8",
+      "bytes": 9778
+    },
+    {
+      "path": "tests/test_evaluation.py",
+      "sha256": "becafc03bd5457a53595024cb87d7ab9eeeb19357c16c4f05ffce2360f4c3abd",
+      "bytes": 10961
+    },
+    {
+      "path": "tests/test_provenance.py",
+      "sha256": "1df8e6993ae8f2bb1e9aed8b9b6eb0ea9f84654efa6d8f80d33febc636adeed3",
+      "bytes": 7872
+    },
+    {
+      "path": "tests/test_statistics.py",
+      "sha256": "8786c8804d1125b8329cefb09d6a2aa06a6bcad69ad573abbeabc91375325bf5",
+      "bytes": 15179
+    },
+    {
+      "path": "tests/test_training.py",
+      "sha256": "dbeab9e1c0aa73fda028a207b69f7dd0e955fe8cebbdde5ecc14e7e7a25e9858",
+      "bytes": 9239
+    },
+    {
+      "path": "tests/test_training_smoke.py",
+      "sha256": "c794f75abc032db3c4759692802163b04df0d41d4d62ebac548d7f9a383d9972",
+      "bytes": 3324
+    },
+    {
+      "path": "tests/test_uncertainty_decision.py",
+      "sha256": "1ed925f178d1d3d415076ac8ba1b8de2096ada55e6a4add3638a32efa97500aa",
+      "bytes": 7994
+    },
+    {
+      "path": "tests/test_vascular.py",
+      "sha256": "1674cba41caac668b1c1db94101302d3f08e73c2804a064624cd5c94c446a2fd",
+      "bytes": 5738
+    },
+    {
+      "path": "tests/test_verification_artifacts.py",
+      "sha256": "1ac3e2be4e8da34333cc94acf82b7d7b1cd28c040fda980d02a41ac153e7a0a1",
+      "bytes": 4301
+    },
+    {
+      "path": "verification_report.json",
+      "sha256": "2d4eb09f71b0532fa863f8eef018e2caa3abce0df60bb3c891dcfabef86bc36a",
+      "bytes": 38254
+    },
+    {
+      "path": "verification_summary.txt",
+      "sha256": "6756b2a534fa33fa78d3c719011acd4150577f07ac38749dc1538f86194e7fdb",
+      "bytes": 17931
+    }
+  ]
+}

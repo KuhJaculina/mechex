@@ -1,0 +1,15 @@
+# Primary reported result: the full model at the external site.
+# Ref: Table 1, proposed row; Sec. 2.2.
+ablation:
+  molecular_branch: true
+  imaging_branch: true
+  decision_layer: true
+  adaptation: frozen_head
+  initialisation: pretrained
+coupling:
+  mode: cross_attention
+uncertainty:
+  mode: evidential
+  recalibrate: true
+objective:
+  conservation_weight: 1.0

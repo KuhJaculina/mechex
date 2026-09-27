@@ -1,0 +1,4 @@
+# The repurposing ranking driven by the exposure estimate.
+# Ref: Sec. 2.8.
+decision:
+  adequacy_relative: 1.0

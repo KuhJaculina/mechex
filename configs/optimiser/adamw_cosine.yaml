@@ -1,0 +1,19 @@
+# Optimiser and schedule. AdamW with cosine decay, a batch of 64 patients, a patience of
+# twelve epochs and five repeat seeds are reported; the learning rate, weight decay, epoch
+# horizon, warmup fraction, floor and clipping norm are engineering defaults.
+# Ref: Sec. 3.8.
+name: adamw
+lr: 0.001
+weight_decay: 0.01
+betas: [0.9, 0.999]
+epochs: 60
+warmup_fraction: 0.05
+min_lr_factor: 0.01
+grad_clip_norm: 1.0
+batch_size: 64
+grad_accum: 1
+patience: 12
+precision: fp32
+world_size: 1
+seed: 20260927
+repeats: 5

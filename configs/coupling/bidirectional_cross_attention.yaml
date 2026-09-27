@@ -1,0 +1,7 @@
+# Exposure-coupling module. The interaction offset keeps 1 + epsilon strictly positive.
+# Ref: Sec. 3.6, exposure-coupling module; Eq. (1).
+mode: cross_attention
+width: 128
+heads: 4
+dropout: 0.1
+interaction_offset: -0.5

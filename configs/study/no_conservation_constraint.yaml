@@ -1,0 +1,4 @@
+# Tier 3: the conservation penalty switched off, leaving the unconstrained fusion.
+# Ref: Table 2, "No conservation constraint".
+objective:
+  conservation_weight: 0.0

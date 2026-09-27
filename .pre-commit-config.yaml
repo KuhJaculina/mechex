@@ -1,0 +1,29 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=2048"]
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+
+  # ruff owns the import order as well as lint and format, so isort is configured to the
+  # same profile rather than running as a second authority.
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: ["--fix"]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/fixtures-mypy
+    rev: v1.11.2
+    hooks:
+      - id: mypy
+        args: ["--strict"]
+        files: ^src/mechex/
+        additional_dependencies: ["torch", "numpy", "scipy", "scikit-learn", "omegaconf", "PyYAML"]

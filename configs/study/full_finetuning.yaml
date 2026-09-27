@@ -1,0 +1,4 @@
+# Design option: both encoders fine-tuned end to end under an identical budget.
+# Ref: Sec. 3.6 and Sec. 4, frozen heads against full fine-tuning.
+ablation:
+  adaptation: full_finetune

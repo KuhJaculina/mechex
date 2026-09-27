@@ -1,0 +1,32 @@
+# Generated cohort and derived artefacts are never committed.
+/data/
+/runs/
+/reports/
+
+# Large or regenerable model artefacts.
+/models/
+*.pt
+*.ckpt
+*.npz
+*.onnx
+
+# Python build and cache products.
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Tool caches.
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editors and operating system files.
+.DS_Store
+.idea/
+.vscode/
+*.swp

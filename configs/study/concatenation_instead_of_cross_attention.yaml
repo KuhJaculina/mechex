@@ -1,0 +1,4 @@
+# Tier 2: additive concatenation in place of the multiplicative coupling.
+# Ref: Table 2, "Concatenation instead of cross-attention".
+coupling:
+  mode: concatenation

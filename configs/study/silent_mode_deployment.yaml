@@ -1,0 +1,4 @@
+# The fourteen-week observational deployment endpoints.
+# Ref: Sec. 2.9 and Sec. 3.12.
+decision:
+  abstention_quantile: 0.10

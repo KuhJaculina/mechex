@@ -1,0 +1,7 @@
+# Decision layer. tau is the reported minimum clinically important difference; the
+# abstention quantile and the false-positive budget are reported operating choices.
+# Ref: Sec. 3.5, threshold; Sec. 3.6, decision layer; Sec. 3.10, harm trade-off.
+tau: 0.30
+adequacy_relative: 1.0
+abstention_quantile: 0.10
+false_positive_budget: 0.05

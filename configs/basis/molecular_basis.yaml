@@ -1,0 +1,9 @@
+# Structure branch. The encoder is frozen and only the projection head is adapted.
+# Ref: Sec. 3.6, molecular derivation.
+latent_dim: 128
+layers: 4
+heads: 4
+atom_feature_dim: 19
+bond_feature_dim: 6
+dropout: 0.1
+frozen: true

@@ -1,0 +1,9 @@
+# Primary cohort shape and the schema-compatible cohort fixture that stands in for the
+# de-identified clinical cohort the manuscript does not distribute.
+# Ref: Sec. 2.1; Sec. 3.2-3.3.
+n_records: 8333
+n_molecules: 27
+fixture_seed: 20260927
+concentration_time_points: 9
+arterial_phase: arterial
+delayed_phase: delayed

@@ -1,0 +1,7 @@
+# Uncertainty head: evidential output with post-hoc isotonic recalibration on the
+# calibration split.
+# Ref: Sec. 3.6, uncertainty head.
+mode: evidential
+hidden_dim: 64
+isotonic_bins: 32
+recalibrate: true

@@ -1,0 +1,4 @@
+# The four held-out shift conditions.
+# Ref: Sec. 2.5 and Table 4.
+protocol:
+  development_fraction: 0.70

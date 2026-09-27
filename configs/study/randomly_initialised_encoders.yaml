@@ -1,0 +1,4 @@
+# Tier 2: both foundation encoders redrawn instead of using pretrained weights.
+# Ref: Table 2, "Both encoders randomly initialised".
+ablation:
+  initialisation: random

@@ -1,0 +1,5 @@
+# Tier 1: regression only, so the adequacy classification is not produced and its
+# discrimination is not applicable.
+# Ref: Table 2, "No decision layer (regression only)".
+ablation:
+  decision_layer: false

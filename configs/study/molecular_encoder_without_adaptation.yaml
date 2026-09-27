@@ -1,0 +1,5 @@
+# Tier 2: the structure encoder frozen together with its projection head, so no adaptation
+# of the molecular representation takes place.
+# Ref: Table 2, "Molecular encoder frozen without adaptation".
+ablation:
+  adaptation: frozen_no_head

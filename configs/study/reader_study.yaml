@@ -1,0 +1,4 @@
+# The reader study, whose inputs are human data the release does not hold.
+# Ref: Sec. 2.6 and Supplementary Table SA-4.
+decision:
+  tau: 0.30

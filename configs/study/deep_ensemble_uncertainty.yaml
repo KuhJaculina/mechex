@@ -1,0 +1,5 @@
+# Tier 3: a deep ensemble in place of the evidential head.
+# Ref: Table 2, "Uncertainty head replaced by deep ensemble".
+uncertainty:
+  mode: deep_ensemble
+  recalibrate: true

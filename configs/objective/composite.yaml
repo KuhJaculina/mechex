@@ -1,0 +1,8 @@
+# Composite objective. The manuscript names the four terms but not their relative weights,
+# so all four enter at weight one.
+# Ref: Sec. 3.8, training.
+concordance_weight: 1.0
+decision_weight: 1.0
+conservation_weight: 1.0
+evidential_weight: 1.0
+concordance_kind: ccc

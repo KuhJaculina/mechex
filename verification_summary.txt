@@ -1,0 +1,272 @@
+mechex-1.0.0 verification summary
+root: mechex
+overall status: PARTIALLY_VERIFIED
+code status   : PARTIALLY_VERIFIED
+checks: 111 total (PASS=104, FAIL=4, NOT_RUN=2, BLOCKED=1)
+code checks: 91 total (PASS=90, FAIL=0, NOT_RUN=0, BLOCKED=1)
+
+claim mapping: 68 claims over 65 anchors, 108 code references, 18 deviations
+unresolved code references: 0
+
+configured run
+  abstention_quantile: 0.1
+  bootstrap_resamples: 2000
+  cohort_records: 8333
+  coupling_mode: cross_attention
+  coupling_width: 32
+  ece_bins: 15
+  isotonic_bins: 8
+  isotropic_spacing_mm: 1.0
+  molecular_latent_dim: 32
+  molecular_layers: 2
+  reference_schedule: {'optimiser': 'adamw', 'learning_rate': 0.005, 'weight_decay': 0.01, 'betas': [0.9, 0.999], 'scheduler': 'cosine_with_warmup', 'warmup_fraction': 0.05, 'warmup_steps': 52, 'total_steps': 1052, 'min_lr_factor': 0.01, 'batch_size': 8, 'grad_accum': 1, 'epochs': 2, 'early_stopping_patience': 2, 'precision': 'fp32', 'world_size': 1, 'effective_batch_size': 8}
+  release: mechex-1.0.0
+  residual_tolerance: 0.2
+  smoke_overlay: True
+  split: {'development': 4207, 'calibration': 470, 'validation': 1035, 'test': 1023, 'external': 1598}
+  tau: 0.3
+  uncertainty_mode: evidential
+  vascular_channels: [8, 16, 24]
+  version: 1.0.0
+  volume_shape: [16, 16, 12]
+
+execution profile
+  cuda_available: False
+  implementation: CPython
+  machine: arm64
+  mps_available: True
+  numpy: 2.4.3
+  platform: Darwin
+  python: 3.14.0
+  scikit_learn: 1.8.0
+  scipy: 1.17.1
+  torch: 2.11.0
+
+code checks
+  [PASS] cohort-shape
+      fixture holds 8333 records over 3 sites and 27 molecules against the reported 8333, 3 and 27
+  [PASS] external-strata-sizes
+      all 10 reported strata reproduce their size on the fixture
+  [PASS] linkage-traceability
+      8333 keys joined across four tables, key uniqueness reconfirmed by an independent set construction, duplicate keys 0
+  [PASS] five-transforms
+      trapezoidal integral recomputed by hand agrees to 0.00e+00 and the scaled index to 0.00e+00
+  [PASS] normalisation-development-only
+      all 27 development medians sit at one, and 27 of the external medians do not, which is what a normalisation fitted on development alone looks like
+  [PASS] split-fractions
+      patient fractions over Sites A and B are 0.700, 0.150 and 0.150 against the reported 0.70, 0.15 and 0.15
+  [PASS] leakage-clean
+      patient and record sets are disjoint across all five partitions; the external site shares no patient with development
+  [PASS] exclusion-rules
+      8333 of 8333 records are retained; the non-diagnostic count 0 matches a hand count of 0
+  [PASS] reference-tiers
+      tier shares are 415 direct assay, 914 microdialysis and 7004 composite index, giving a directly assayed share of 0.050
+  [PASS] adequacy-boundary
+      the frozen boundary is 1.3000, recomputed by hand as 1.3000 from tau 0.30
+  [PASS] graph-collation
+      two graphs of 5 and 9 atoms pad to [2, 9, 19] with masks of 5 and 9, and the bond map is symmetric
+  [PASS] volume-preparation
+      a prepared pair has shape [2, 16, 16, 12], is finite and carries a per-scan mean of -1.99e-08
+  [PASS] molecular-branch
+      the branch emits a partition term in [0.7114, 0.7163] with an embedding of shape [4, 32]
+  [PASS] forward-shapes
+      batch of 4 yields partition, delivered fraction, interaction and exposure of length 4; the volume tensor is [4, 2, 16, 16, 12]
+  [PASS] admissible-ranges
+      partition in [0.7098, 0.7166], delivered fraction in [0.4747, 0.5113], smallest interaction factor 1.1914
+  [PASS] conservation-identity
+      the hand-recomputed product matches the head's reconstruction to 0.00e+00
+  [PASS] conservation-residual
+      |A - A_hat| / A recomputed by hand matches the head's residual to 0.00e+00
+  [PASS] margin-penalty
+      the penalty is 2.429e-03 below the tolerance, 0.035 at it and 0.4000 well above, the last matching a hand softplus evaluation to 1e-6
+  [PASS] frozen-encoders
+      neither encoder carries a gradient; 54120 parameters are frozen and 0.1 M parameters are held in total
+  [PASS] gradient-flow
+      5 of 5 partition-head tensors received a gradient and no frozen encoder tensor did
+  [PASS] parameter-update
+      the step changed 2 head tensors and left all 4 sampled encoder tensors unchanged
+  [PASS] finite-difference-gradient
+      autograd gives +0.304521 and a central difference gives +0.304520, a relative gap of 1.66e-06
+  [PASS] coupling-variants
+      all six coupling variants keep 1 + epsilon positive; the smallest factor is 
+  [PASS] ablation-configurations
+      the component-removal and architectural-substitution variants build from configuration; parameter counts in millions are {'no_uncertainty_head': 0.1, 'deep_ensemble': 0.1, 'concatenation': 0.1, 'single_branch_stack': 0.1, 'random_init': 0.1}
+  [PASS] retention-attribution-direction
+      a least-squares fit of log exposure on the standardised descriptors gives an efflux loading of -0.0689, lipophilicity -0.0569 and size +0.0040; efflux propensity is the most negative axis
+  [PASS] single-batch-overfit
+      an independently recomputed log-scale concordance loss moved from 0.9933 to 0.0145 over 60 steps on 8 records
+  [PASS] minimal-training-closed-loop
+      a two-epoch closed loop over 64 development records reports training totals ['3.0436', '2.4703']
+  [PASS] optimiser-schedule
+      the factor rises to 1.0000 over 5 warmup steps and decays to 0.0103, which is the configured floor 0.01
+  [PASS] early-stopping-patience
+      with a patience of 12 the stopper halts at epoch 16 after the best epoch 4, which is the reported patience applied to a flat trace
+  [PASS] checkpoint-round-trip
+      the restored model reproduces the exposure estimate to 0.00e+00 and the checkpoint carries seed 20260927
+  [PASS] repeat-seeds
+      five distinct seeds [20260927, 20261940, 20262953, 20263966, 20264979] aggregate to a mean of 2.6000, recomputed as 2.6000
+  [PASS] penalty-weight-sweep
+      after the same number of steps a quarter weight leaves a mean residual of 0.4264 and a fourfold weight leaves 0.2025
+  [PASS] ccc-brute-force
+      the loop gives 0.7082268224 and the release gives 0.7082268224
+  [PASS] auroc-sklearn
+      the release gives 0.8458158730 and scikit-learn gives 0.8458158730
+  [PASS] delong-consistency
+      DeLong returns 0.550937 and 0.483542 against rank AUROCs 0.550937 and 0.483542, difference +0.067396 with p 0.2369
+  [PASS] bootstrap-interval
+      the interval brackets the estimate and its half-width falls from 0.3420 at 40 samples to 0.0961 at 400
+  [PASS] ece-brute-force
+      the hand-binned value is 0.0404092506 and the release gives 0.0404092506
+  [PASS] fold-error-brute-force
+      the explicit product gives 1.6817928305 and the release gives 1.6817928305
+  [PASS] spearman-scipy
+      the release gives 0.4571269797 and scipy gives 0.4571269797
+  [PASS] kappa-sklearn
+      the release gives 0.6698018811 and scikit-learn gives 0.6698018811
+  [PASS] mcnemar-exact
+      with 1 discordant in one direction and 0 in the other, the release gives p = 1.000000 and the binomial tail gives 1.000000
+  [PASS] benjamini-hochberg
+      the adjustment is monotone and its rejected set equals the step-up set for the largest rank 2 that clears alpha * rank / n, giving 2 rejections
+  [PASS] pava-invariants
+      the fit is non-decreasing and preserves the total to 0.00e+00, which is the block-mean invariant
+  [PASS] isotonic-recalibration
+      over a grid of 200 deviations the recalibrated value never decreases and stays positive; the range is [0.0941, 0.3031]
+  [PASS] mixed-effects-reduction
+      over 12 readers of 20 records each the mixed model gives +1.1462 against an independent Newton logistic fit of +0.9886, a gap of 0.1575, with the random-effect scale at 0.7193
+  [PASS] inconsistency-brute-force
+      3 of 5 crafted records are flagged, giving 60.00%, recomputed directly from the tolerance and the admissible interval
+  [PASS] trapezoid-analytic
+      the trapezoidal rule gives 10.000000 against a hand sum of 10.000000 on a polygon
+  [PASS] external-evaluation
+      an identity predictor on 1598 external records gives concordance 1.0000 with interval [1.0000, 1.0000]
+  [PASS] criterion-margins
+      the flagged comparison implies margins of 0.071 and 0.047 over the 0.75 and 0.85 criteria, which are the reported 0.071 and 0.047
+  [PASS] stratified-pipeline
+      15 strata evaluated; the severity axis covers 1598 external records against the reported 1598
+  [PASS] shift-pipeline
+      all four shifts evaluated: ['graceful', 'graceful', 'graceful', 'graceful'] against the banding ceilings 5.0/10.0
+  [PASS] abstention-behaviour
+      removing the highest-deviation tenth leaves 0.900 coverage with retained AUROC 0.7564, recomputed by hand as 0.7564
+  [PASS] failure-taxonomy
+      a crafted worst decile is assigned to dense calcification, vendor timing, low availability and renal impairment in that order, with the fifth record left outside the taxonomy
+  [PASS] false-positive-budget
+      the selected point carries a false-positive rate of 0.0200 inside the 0.05 budget and the lowest expected cost among the admissible points
+  [PASS] perturbation-response
+      a 10% gain scales a channel by 1.100000 and the response matrix records the 5% perturbation as a relative change of 0.050000
+  [PASS] drift-alert-rate
+      the calibrated multiple is 5.295 spread units and yields 0 alerts over 20000 stationary cases, a rate of 0.00e+00
+  [PASS] running-moments
+      the streaming mean lands on 2.500000 and the streaming standard deviation on 1.290994, matching a direct computation
+  [PASS] quantisation-error
+      the integer weights match a hand quantisation and every residual stays within half a per-channel step; the largest residual is 9.444e-04 against a smallest half-step of 7.625e-04
+  [PASS] int8-evaluation
+      the quantised layer deviates from the full-precision layer by 0.3615% relative to the output magnitude
+  [PASS] quantisation-report
+      31 linear layers quantised with a mean relative Frobenius error of 0.0037
+  [PASS] ranking-arithmetic
+      a fully reversed panel gives movements [-5, -3, -1, 1, 3, 5] against the hand sequence [-5, -3, -1, 1, 3, 5], so 2 molecules move at least five
+  [PASS] shortlist-effect
+      with two adequate molecules against a mechanism shortlist of two, 2 mechanism picks leave the shortlist and 2 enter it
+  [PASS] reader-machinery
+      three arms over 13 readers; the model-assisted inter-reader kappa is 0.0210 and the arm accuracies are {'reader_only': 0.7, 'model_only': 0.7625, 'reader_plus_model': 0.7625}
+  [PASS] invitro-direction
+      per-compound accumulation ratios [1.089, 1.891, 2.637, 3.396] rise with efflux propensity, the first matching a hand computation to 1e-9, and detecting rho 0.87 at 80% power needs 7.4 compounds against the four the manuscript used
+  [PASS] silent-mode-endpoints
+      the log of 1400 assessments gives 76.50% consulted and 51.71% approved, both matching a direct recomputation
+  [PASS] fusion-comparators-run
+      on the fixture the early-concatenation comparator reaches concordance 0.9754 and the cross-attention comparator 0.9569; both run and report, which is what this check covers, and neither value is the manuscript's
+  [PASS] baseline-families
+      12 of 12 reconstructed comparators produced a finite concordance on the fixture; these are fixture-level reconstructions and are not the manuscript's values
+  [PASS] mechanism-score-direction
+      raising only the efflux-propensity axis lowers the mechanism score from 0.3700 to -0.3700
+  [PASS] claim-anchors-resolve
+      all 108 code references across 108 distinct targets resolve
+  [PASS] deviations-complete
+      all 18 deviations carry a paper location, a description and a justification
+  [PASS] config-groups
+      all 12 config groups are present with at least one YAML file
+  [PASS] package-resolution
+      the package resolves inside the checkout at src/mechex
+  [PASS] effective-line-count
+      the tree holds 20433 python lines, 17316 of them non-blank and not a bare comment
+  [PASS] no-duplicated-logic
+      no ten-line block of logic appears in two places
+  [PASS] no-stub-implementations
+      every function carries an implementation
+  [PASS] no-fabricated-numbers
+      no reported performance value is hard-coded outside the claim registry
+  [PASS] readme-hygiene
+      10 headings, none of them a code-availability, citation or checkpoint section
+  [PASS] no-stray-markdown
+      the only markdown in the tree is the README
+  [PASS] no-forbidden-phrases
+      no forbidden framing phrase appears in the tree
+  [PASS] no-emoji
+      no emoji appears in the tree
+  [PASS] no-host-paths
+      no host path appears in a shipped file
+  [PASS] no-artificial-data-wording
+      the cohort stand-in is described only as a fixture
+  [PASS] dataset-urls
+      3 dataset entries, each carrying a URL and an access note
+  [PASS] notice-provenance
+      the notice names every direct third-party dependency with its licence
+  [PASS] gitignore-anchoring
+      every directory entry is anchored, so the internal data and config modules stay tracked
+  [PASS] no-absolute-paths
+      no shipped report embeds the resolved checkout path
+  [PASS] gate-pytest
+      pytest exited 0: 276 passed, 1 warning
+  [PASS] gate-ruff
+      ruff check exited 0 (All checks passed!); ruff format --check exited 0 
+  [PASS] gate-mypy
+      mypy exited 0: Success: no issues found in 105 source files
+  [PASS] gate-manifest-freshness
+      the manifest digests every shipped file and matches the live tree
+  [BLOCKED] gate-docker
+      no container engine is present on the verification host, so the image was never built; the recipe is shipped and pinned to the same interpreter the suite runs on
+
+manuscript checks
+  [PASS] ccc_margin_over_criterion
+      0.821 - 0.75 = 0.071 against the reported 0.071
+  [PASS] auroc_margin_over_criterion
+      0.897 - 0.85 = 0.047 against the reported 0.047
+  [PASS] coupling_gain_over_strongest_single_branch
+      0.821 - 0.688 = 0.133 for concordance and 0.897 - 0.806 = 0.091 for discrimination, against the reported 0.133 and 0.091
+  [PASS] coupling_gain_preset_margin
+      the discrimination gain 0.091 exceeds the stated margin 0.080
+  [PASS] unconstrained_delta_ccc
+      0.821 - 0.813 = 0.008 against the reported +0.008
+  [PASS] unconstrained_delta_auroc
+      0.897 - 0.901 = -0.004 against the reported -0.004
+  [PASS] constraint_removal_utility_cost
+      the Tier-3 no-constraint row sits +0.008 ahead on concordance and +0.004 ahead on discrimination of the full model, which is the utility cost the text attributes to the constraint
+  [PASS] unconstrained_violation_contrast
+      18.7% without the constraint against 2.1% with it, which is the order-of-magnitude reduction the text claims
+  [FAIL] interaction_synergy_excess
+      taking the mechanism-only score 0.431 as the common floor, the two branch contributions sum to 0.898 for concordance and 0.949 for discrimination, so the coupled model's excess is -0.077 and -0.052 while the table reports +0.078 and +0.053. The magnitudes agree to within 0.001 and the sign does not.
+  [FAIL] external_ccc_value_disagreement
+      the abstract, Sec. 2.2 and Table 1 give 0.821; the Table 3 note, Sec. 2.4 and Table 4 give 0.814. The gap is 0.007 and the manuscript never reconciles the two, so the Table 3 and Table 4 decrements are computed against the second value while the primary comparison is reported against the first.
+  [PASS] table_3_decrements_reference_value
+      every decrement in Table 3 reproduces against 0.814 and none of them reproduces against 0.821, which confirms the disagreement reported above rather than resolving it
+  [FAIL] fold_error_zone_placement
+      Sec. 2.2 reports the fold error as 1.42, placed at the lower boundary of the 1.5 to 3.0 zone. The value is below the zone rather than at its boundary, so either the zone or the value is stated incorrectly.
+  [FAIL] supplementary_collision_sc_1
+      Sec. 3.6, decision layer harm tiering and Sec. 3.10, perturbation-response matrix: the same supplementary table number is cited for two unrelated artefacts
+  [PASS] table_4_degradation_arithmetic
+      all four shifts reproduce from the table's own development row
+  [PASS] table_4_banding_consistency
+      all four shifts carry the band their AUROC loss implies
+  [PASS] constraint_weight_monotonicity
+      x0.25 gives 9.4%, weight one gives 2.1% and x4 gives 1.3%
+  [PASS] ablation_branch_removal_matches_single_branch
+      no-molecular 0.688 equals the imaging-only model and no-imaging 0.641 equals the molecular-only model, which is the consistency the text asserts
+  [PASS] ablation_full_row_matches_primary_table
+      both tables report 0.821 concordance and 0.897 discrimination for the full model
+  [NOT_RUN] in_vitro_ratio_completeness
+      the design covers 4 compounds and only 2 accumulation ratios are stated, so the per-compound table cannot be reconstructed from the text and the reported rho cannot be re-derived
+  [NOT_RUN] unrecoverable_text_quantity_silent_mode_assessment_count
+      anchor Sec. 2.9; the text layer renders it as "417 2 assessments". the released PDF renders the count with an interleaved space, so neither 417 nor 4172 can be read from the text layer; the surrounding percentages are recorded instead
+
+interpretation
+  PASS means the check ran on this host and held. FAIL means it ran and did not hold. NOT_RUN means the input it needs is unavailable, which for a private clinical cohort is the expected outcome and is never an invitation to substitute a number. BLOCKED means an external resource is required and is not present in this checkout. overall_status covers every check; code_status covers the same set without the manuscript family, so a disagreement inside the manuscript's own tables is not confused with a defect in this release.

@@ -1,0 +1,6 @@
+# The primary external-site evaluation with the reported criterion thresholds.
+# Ref: Sec. 2.2, Sec. 3.5 and Sec. 3.9.
+protocol:
+  ccc_threshold: 0.75
+  auroc_threshold: 0.85
+  bootstrap_resamples: 2000

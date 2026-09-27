@@ -1,0 +1,4 @@
+# Tier 1: the delivery branch removed.
+# Ref: Table 2, "No imaging branch".
+ablation:
+  imaging_branch: false

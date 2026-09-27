@@ -1,0 +1,4 @@
+# Tier 3: a quarter of the reported penalty weight.
+# Ref: Table 2, "Constraint weight x0.25".
+objective:
+  conservation_weight: 0.25

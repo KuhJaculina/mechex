@@ -1,0 +1,4 @@
+# Tier 2: branches trained independently and stacked additively.
+# Ref: Table 2, "Single-branch-then-stack backbone".
+coupling:
+  mode: single_branch_stack

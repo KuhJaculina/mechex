@@ -1,0 +1,16 @@
+# Protocol: split fractions, reference tiers, criteria and statistics. Every value here is
+# reported by the manuscript.
+# Ref: Sec. 2.2, Sec. 3.4-3.5, Sec. 3.8-3.9.
+sites_development: [A, B]
+site_external: C
+development_fraction: 0.70
+validation_fraction: 0.15
+test_fraction: 0.15
+calibration_fraction: 0.10
+tier1_assay_records: 418
+reference_kappa: 0.86
+ccc_threshold: 0.75
+auroc_threshold: 0.85
+bootstrap_resamples: 2000
+ece_bins: 15
+fdr: 0.05
